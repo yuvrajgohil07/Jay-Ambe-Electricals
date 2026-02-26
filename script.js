@@ -1,17 +1,43 @@
 /* ===========================
+   HAMBURGER MENU TOGGLE
+=========================== */
+(function () {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  const navItems = navLinks ? navLinks.querySelectorAll('.nav-item') : [];
+
+  if (!hamburger || !navLinks) return;
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close menu when a nav link is clicked (useful for single-page anchors)
+  navItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
+/* ===========================
    IMAGE SLIDER LOGIC
 =========================== */
 (function () {
-  const track    = document.getElementById('sliderTrack');
-  const slides   = track.querySelectorAll('.slide');
-  const prevBtn  = document.getElementById('prevBtn');
-  const nextBtn  = document.getElementById('nextBtn');
+  const track = document.getElementById('sliderTrack');
+  const slides = track.querySelectorAll('.slide');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
 
-  const TOTAL          = slides.length;
-  const AUTO_INTERVAL  = 4000;   // ms between auto-advances
-  const TRANSITION_MS  = 600;    // must match CSS transition duration
+  const TOTAL = slides.length;
+  const AUTO_INTERVAL = 4000;   // ms between auto-advances
+  const TRANSITION_MS = 600;    // must match CSS transition duration
 
-  let current   = 0;
+  let current = 0;
   let autoTimer = null;
   let isAnimating = false;
 
@@ -49,7 +75,7 @@
 
   /* Keyboard navigation */
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft')  { goTo(current - 1); resetAuto(); }
+    if (e.key === 'ArrowLeft') { goTo(current - 1); resetAuto(); }
     if (e.key === 'ArrowRight') { goTo(current + 1); resetAuto(); }
   });
 

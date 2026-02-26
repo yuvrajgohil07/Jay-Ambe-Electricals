@@ -9,10 +9,15 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #f5f5f5;
   color: #222;
+  overflow-x: hidden;
 }
 
 /* ===========================
@@ -22,24 +27,34 @@ body {
   position: relative;
   width: 100%;
   line-height: 0;
-  /* remove gap under inline img */
 }
 
 .cover-img {
   width: 100%;
-  height: 380px;
   object-fit: cover;
   display: block;
+}
+
+/* Desktop cover: tall landscape */
+.cover-img-desktop {
+  height: clamp(220px, 40vw, 380px);
+}
+
+/* Mobile cover: hidden on desktop by default */
+.cover-img-mobile {
+  display: none;
+  height: clamp(180px, 55vw, 280px);
 }
 
 /* Logo circle — centered at the bottom edge of cover */
 .logo-wrapper {
   position: absolute;
-  bottom: -55px;
+  bottom: -45px;
   left: 50%;
   transform: translateX(-50%);
-  width: 110px;
-  height: 110px;
+  /* fluid size: 80px on phones → 110px on desktop */
+  width: clamp(80px, 14vw, 110px);
+  height: clamp(80px, 14vw, 110px);
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid #fff;
@@ -61,14 +76,52 @@ body {
 .navbar {
   width: 100%;
   background: #1a1a2e;
-  padding: 0;
-  margin-top: 60px;
-  /* space for the overlapping logo */
+  margin-top: clamp(48px, 8vw, 60px);
   position: relative;
   z-index: 5;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* ---------- Hamburger button (hidden on desktop) ---------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  margin-left: auto;
+  /* push to right edge in flex row */
+  z-index: 20;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #eee;
+  border-radius: 3px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Animate hamburger → X when open */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(9.5px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-9.5px) rotate(-45deg);
+}
+
+/* ---------- Nav links ---------- */
 .nav-links {
   list-style: none;
   display: flex;
@@ -78,7 +131,7 @@ body {
 
 .nav-links li a {
   display: block;
-  padding: 16px 32px;
+  padding: 16px 28px;
   color: #eee;
   text-decoration: none;
   font-size: 15px;
@@ -123,7 +176,8 @@ body {
 
 .slide img {
   width: 100%;
-  height: 420px;
+  /* fluid height: 220px on phones → 420px on large screens */
+  height: clamp(220px, 45vw, 420px);
   object-fit: cover;
   display: block;
 }
@@ -136,21 +190,20 @@ body {
   top: 50%;
   transform: translateY(-50%);
   z-index: 20;
-  width: 52px;
-  height: 52px;
+  /* fluid size: 38px on phones → 52px on desktop */
+  width: clamp(38px, 6vw, 52px);
+  height: clamp(38px, 6vw, 52px);
   border-radius: 50%;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* blurry white background, black arrow */
   background: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: #000;
-  font-size: 22px;
+  font-size: clamp(14px, 3vw, 22px);
   font-weight: bold;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
   transition: background 0.2s, transform 0.2s;
@@ -163,11 +216,11 @@ body {
 }
 
 .arrow-left {
-  left: 14px;
+  left: 10px;
 }
 
 .arrow-right {
-  right: 14px;
+  right: 10px;
 }
 
 /* ===========================
@@ -175,6 +228,95 @@ body {
 =========================== */
 .empty-section {
   width: 100%;
-  min-height: 500px;
+  min-height: 300px;
   background: #f5f5f5;
+}
+
+/* ===========================
+   RESPONSIVE — TABLET (≤ 768px)
+=========================== */
+@media (max-width: 768px) {
+
+  /* Swap cover images */
+  .cover-img-desktop {
+    display: none;
+  }
+
+  .cover-img-mobile {
+    display: block;
+  }
+
+  /* Navbar: flex-row so hamburger sits inline at the right */
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 18px;
+    min-height: 52px;
+  }
+
+  .hamburger {
+    display: flex;
+    padding: 15px 0;
+    /* gives the bar enough height */
+  }
+
+  /* Nav links: full-width column below the hamburger row */
+  .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    margin-top: 0;
+  }
+
+  /* Large enough to show all 5 items (each ~50px tall) with room to spare */
+  .nav-links.open {
+    max-height: 600px;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-links li a {
+    padding: 14px 20px;
+    font-size: 16px;
+    display: block;
+  }
+
+  .slider-section {
+    padding-top: 24px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — PHONE (≤ 480px)
+=========================== */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .nav-links li a {
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+
+  .arrow-left {
+    left: 6px;
+  }
+
+  .arrow-right {
+    right: 6px;
+  }
+
+  .slider-section {
+    padding-top: 16px;
+  }
 }
