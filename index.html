@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jay Ambe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== HERO / COVER SECTION ===== -->
+  <div class="hero">
+    <img src="cover.webp" alt="Cover" class="cover-img" />
+    <div class="logo-wrapper">
+      <img src="logo.webp" alt="Logo" class="logo-img" />
+    </div>
+  </div>
+
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== IMAGE SLIDER ===== -->
+  <section class="slider-section">
+    <div class="slider-container">
+      <!-- Left Arrow -->
+      <button class="arrow arrow-left" id="prevBtn" aria-label="Previous">
+        &#10094;
+      </button>
+
+      <!-- Slides -->
+      <div class="slider-track" id="sliderTrack">
+        <div class="slide"><img src="lift1.webp" alt="Lift 1" /></div>
+        <div class="slide"><img src="lift3.webp" alt="Lift 3" /></div>
+        <div class="slide"><img src="list 2.webp" alt="Lift 2" /></div>
+      </div>
+
+      <!-- Right Arrow -->
+      <button class="arrow arrow-right" id="nextBtn" aria-label="Next">
+        &#10095;
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== REMAINING EMPTY SECTION ===== -->
+  <section class="empty-section"></section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
