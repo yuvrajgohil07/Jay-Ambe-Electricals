@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap');
+
 /* ===========================
    RESET & BASE
 =========================== */
@@ -169,17 +171,81 @@ body {
   will-change: transform;
 }
 
-.slide {
-  min-width: 100%;
-  flex-shrink: 0;
-}
+
+
 
 .slide img {
   width: 100%;
-  /* fluid height: 220px on phones → 420px on large screens */
-  height: clamp(220px, 45vw, 420px);
+  /* Taller to better showcase portrait images */
+  height: clamp(300px, 60vw, 560px);
   object-fit: cover;
+  object-position: center top;
   display: block;
+}
+
+/* Per-slide overlay (moves with the image) */
+.slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  position: relative;
+  /* overlay anchors to this */
+}
+
+.slide-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 22px 28px 24px;
+  background: rgba(0, 0, 0, 0.58);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 -6px 28px rgba(0, 0, 0, 0.35);
+}
+
+.slide-title {
+  font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+  font-size: clamp(20px, 3.2vw, 34px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  margin-bottom: 6px;
+  line-height: 1.1;
+}
+
+.slide-desc {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: clamp(12px, 1.4vw, 15px);
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.5;
+  margin-bottom: 14px;
+  max-width: 600px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.slide-btn {
+  display: inline-block;
+  padding: 8px 24px;
+  background: #1565c0;
+  color: #fff;
+  font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+  font-size: clamp(13px, 1.4vw, 15px);
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 0 3px 12px rgba(21, 101, 192, 0.45);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.slide-btn:hover {
+  background: #1e88e5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(21, 101, 192, 0.55);
 }
 
 /* ===========================
@@ -230,6 +296,37 @@ body {
   width: 100%;
   min-height: 300px;
   background: #f5f5f5;
+}
+
+/* ===========================
+   DETAIL PAGE SECTION
+=========================== */
+.detail-section {
+  width: 100%;
+  min-height: 60vh;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.detail-heading {
+  font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 700;
+  color: #1a1a2e;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.detail-sub {
+  font-size: clamp(14px, 2vw, 18px);
+  color: #555;
+  letter-spacing: 0.5px;
 }
 
 /* ===========================
