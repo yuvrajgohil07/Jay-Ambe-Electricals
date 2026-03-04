@@ -495,9 +495,9 @@ body {
   line-height: 1.5;
 }
 
-/* Products Grid */
+/* Products Grid (Mobile Default) */
 .products-grid {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
 }
 
 .product-card {
@@ -695,6 +695,10 @@ body {
   .about-grid,
   .contact-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .section-container {
