@@ -497,7 +497,7 @@ body {
 
 /* Products Grid (Mobile Default) */
 .products-grid {
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr !important;
 }
 
 .product-card {
@@ -698,7 +698,7 @@ body {
   }
 
   .products-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr) !important;
   }
 
   .section-container {
