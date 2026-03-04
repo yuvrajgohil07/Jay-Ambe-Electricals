@@ -1,4 +1,3 @@
-<!-- this is a change check -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,81 +10,358 @@
 
 <body>
 
-  <!-- ===== HERO / COVER SECTION ===== -->
-  <div class="hero">
-    <!-- Desktop cover (wide landscape image) -->
-    <img src="godown.jpeg" alt="Cover" class="cover-img cover-img-desktop" />
-    <!-- Mobile cover (swap src to a portrait/smaller image if you have one) -->
-    <img src="godown.jpeg" alt="Cover" class="cover-img cover-img-mobile" />
-    <div class="logo-wrapper">
-      <img src="logo.png" alt="Logo" class="logo-img" />
-    </div>
-  </div>
+  <main>
+    <!-- ===== HEADER / NAVIGATION (Fixed Top) ===== -->
+    <header class="site-header" id="siteHeader">
+      <nav class="navbar">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="nav-item active">Home</a></li>
+          <li><a href="#about" class="nav-item">About</a></li>
+          <li><a href="#infrastructure" class="nav-item">Infrastructure</a></li>
+          <li><a href="#products" class="nav-item">Products</a></li>
+          <li><a href="#services" class="nav-item">Services</a></li>
+          <li><a href="#gallery" class="nav-item">Gallery</a></li>
+          <li><a href="#team" class="nav-item">Team</a></li>
+          <li><a href="#contact" class="nav-item">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <!-- ===== NAVIGATION BAR ===== -->
-  <nav class="navbar">
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#" class="nav-item">Home</a></li>
-      <li><a href="#" class="nav-item">About</a></li>
-      <li><a href="#" class="nav-item">Products</a></li>
-      <li><a href="#" class="nav-item">Gallery</a></li>
-      <li><a href="#" class="nav-item">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- ===== IMAGE SLIDER ===== -->
-  <section class="slider-section">
-    <div class="slider-container">
-      <!-- Left Arrow -->
-      <button class="arrow arrow-left" id="prevBtn" aria-label="Previous">
-        &#10094;
-      </button>
-
-      <!-- Slides -->
-      <div class="slider-track" id="sliderTrack">
-        <div class="slide">
-          <img src="FP1.jpeg" alt="Flame Proof 1" />
-          <div class="slide-overlay">
-            <h2 class="slide-title">Flame Proof Materials</h2>
-            <p class="slide-desc">Industrial-grade flame proof enclosures engineered to contain ignition and protect
-              critical electrical components in hazardous environments.</p>
-            <a href="fp1.html" class="slide-btn">Learn More</a>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="FP2.jpeg" alt="Flame Proof 2" />
-          <div class="slide-overlay">
-            <h2 class="slide-title">Flame Proof Materials</h2>
-            <p class="slide-desc">Certified flame proof solutions built to withstand extreme conditions, ensuring safety
-              and compliance across industrial installations.</p>
-            <a href="fp2.html" class="slide-btn">Learn More</a>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="FP3.jpeg" alt="Flame Proof 3" />
-          <div class="slide-overlay">
-            <h2 class="slide-title">Flame Proof Materials</h2>
-            <p class="slide-desc">Robust flame proof apparatus designed for oil, gas, and chemical industries — offering
-              reliable protection in explosive atmospheres.</p>
-            <a href="fp3.html" class="slide-btn">Learn More</a>
-          </div>
+    <!-- ===== HOME SECTION ===== -->
+    <section id="home" class="page-section">
+      <!-- HERO -->
+      <div class="hero">
+        <img src="cover2.png" alt="Cover" class="cover-img cover-img-desktop" />
+        <img src="cover2.png" alt="Cover" class="cover-img cover-img-mobile" />
+        <div class="logo-wrapper">
+          <img src="logo.png" alt="Logo" class="logo-img" />
         </div>
       </div>
 
-      <!-- Right Arrow -->
-      <button class="arrow arrow-right" id="nextBtn" aria-label="Next">
-        &#10095;
-      </button>
-    </div>
-  </section>
+      <!-- IMAGE SLIDER -->
+      <div class="slider-section reveal">
+        <div class="slider-container">
+          <!-- Left Arrow -->
+          <button class="arrow arrow-left" id="prevBtn" aria-label="Previous">
+            &#10094;
+          </button>
 
-  <!-- ===== REMAINING EMPTY SECTION ===== -->
-  <section class="empty-section"></section>
+          <!-- Slides -->
+          <div class="slider-track" id="sliderTrack">
+            <div class="slide">
+              <img src="FP1.jpeg" alt="Flame Proof 1" />
+              <div class="slide-overlay">
+                <h2 class="slide-title">Flame Proof Materials</h2>
+                <p class="slide-desc">Industrial-grade flame proof enclosures engineered to contain ignition and protect
+                  critical electrical components in hazardous environments.</p>
+                <a href="#products" class="slide-btn">Learn More</a>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="FP2.jpeg" alt="Flame Proof 2" />
+              <div class="slide-overlay">
+                <h2 class="slide-title">Flame Proof Materials</h2>
+                <p class="slide-desc">Certified flame proof solutions built to withstand extreme conditions, ensuring
+                  safety
+                  and compliance across industrial installations.</p>
+                <a href="#products" class="slide-btn">Learn More</a>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="FP3.jpeg" alt="Flame Proof 3" />
+              <div class="slide-overlay">
+                <h2 class="slide-title">Flame Proof Materials</h2>
+                <p class="slide-desc">Robust flame proof apparatus designed for oil, gas, and chemical industries —
+                  offering
+                  reliable protection in explosive atmospheres.</p>
+                <a href="#products" class="slide-btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Arrow -->
+          <button class="arrow arrow-right" id="nextBtn" aria-label="Next">
+            &#10095;
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about" class="page-section reveal">
+      <div class="container section-container">
+        <h2 class="section-title">About Us</h2>
+        <p class="section-subtitle">Pioneering Excellence in Electrical Solutions</p>
+        <div class="section-content about-grid">
+          <div class="about-text">
+            <p>Jay Ambe Electricals is committed to providing industry-leading electrical solutions and flame-proof
+              materials. Our journey began with a vision to deliver safety, reliability, and innovation to core
+              industrial sectors.</p>
+            <p>We believe in establishing long-term trust through certified products and exceptional service, ensuring
+              your operations remain safe and compliant under the most demanding conditions.</p>
+          </div>
+          <div class="about-image-placeholder">
+            <!-- Placeholder for company image -->
+            <div class="image-box">[ Company Journey / Building Image ]</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INFRASTRUCTURE SECTION ===== -->
+    <section id="infrastructure" class="page-section reveal bg-light">
+      <div class="container section-container">
+        <h2 class="section-title">Infrastructure</h2>
+        <p class="section-subtitle">State-of-the-Art Facilities</p>
+        <div class="section-content infra-grid">
+          <!-- Placeholders for infrastructure images/capabilities -->
+          <div class="infra-card">
+            <div class="image-box">[ Facility Image 1 ]</div>
+            <h3>Manufacturing Unit</h3>
+            <p>Advanced machinery ensuring precision and quality.</p>
+          </div>
+          <div class="infra-card">
+            <div class="image-box">[ Facility Image 2 ]</div>
+            <h3>Quality Testing Lab</h3>
+            <p>Rigorous testing to meet international safety standards.</p>
+          </div>
+          <div class="infra-card">
+            <div class="image-box">[ Facility Image 3 ]</div>
+            <h3>Warehouse & Logistics</h3>
+            <p>Seamless supply chain for timely global deliveries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRODUCTS SECTION ===== -->
+    <section id="products" class="page-section reveal">
+      <div class="container section-container">
+        <h2 class="section-title">Our Products</h2>
+        <p class="section-subtitle">Certified Flame Proof & Industrial Electricals</p>
+        <div class="section-content products-grid">
+          <div class="product-card">
+            <img src="FP1.jpeg" alt="Elevators Wiring Harness" loading="lazy" class="product-img"
+              onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>Elevators Wiring Harness</h3>
+              <p>High-quality, durable wiring harnesses engineered to ensure seamless and safe electrical connectivity
+                for all elevator systems.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Learn More</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="FP2.jpeg" alt="Elevators Electrical accessories" loading="lazy" class="product-img"
+              onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>Elevators Electrical accessories</h3>
+              <p>A comprehensive range of essential electrical accessories designed to optimize elevator performance and
+                reliability.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Learn More</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="FP3.jpeg" alt="Elevators LOP-COP" loading="lazy" class="product-img"
+              onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>Elevators LOP-COP</h3>
+              <p>Modern and robust Landing Operating Panels (LOP) and Car Operating Panels (COP) for intuitive user
+                control.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Learn More</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="FP1.jpeg" alt="Elevators Flame Proof materials" loading="lazy" class="product-img"
+              onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>Elevators Flame Proof materials</h3>
+              <p>Certified flame-proof components built to provide maximum safety in hazardous environments and
+                industrial settings.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Learn More</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="FP2.jpeg" alt="Elevators Protection Controller" loading="lazy" class="product-img"
+              onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>Elevators Protection Controller</h3>
+              <p>Advanced protection controllers that safeguard elevator circuitry against voltage fluctuations and
+                electrical faults.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Learn More</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="FP3.jpeg" alt="Electrical controller" loading="lazy" class="product-img"
+              onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>Electrical controller</h3>
+              <p>Efficient and precise electrical control units for smooth elevator operation and superior energy
+                management.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES SECTION ===== -->
+    <section id="services" class="page-section reveal bg-light">
+      <div class="container section-container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Comprehensive Support & Maintenance</p>
+        <!-- Use products-grid to maintain identical 3-in-a-row structure -->
+        <div class="section-content products-grid">
+          <div class="product-card">
+            <img src="FP1.jpeg" alt="Erection of Elevators" loading="lazy" class="product-img"
+              onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>Erection of Elevators</h3>
+              <p>Professional end-to-end installation and structural erection of elevators by certified industry
+                experts.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Learn More</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="FP2.jpeg" alt="Maintenance/Renovation" loading="lazy" class="product-img"
+              onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>Maintenance/Renovation</h3>
+              <p>Comprehensive servicing and modern upgrades to enhance the lifespan and safety of your existing
+                elevator systems.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Learn More</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="FP3.jpeg" alt="New Wiring" loading="lazy" class="product-img"
+              onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>New Wiring</h3>
+              <p>Expert electrical layout and wiring services for new elevator installations, compliant with the highest
+                safety standards.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Learn More</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="FP1.jpeg" alt="Service" loading="lazy" class="product-img" onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>Service</h3>
+              <p>Routine check-ups, prompt troubleshooting, and dedicated maintenance to keep your elevators running
+                flawlessly.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Learn More</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="FP2.jpeg" alt="Inspection (As per Govt. Rules)" loading="lazy" class="product-img"
+              onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>Inspection (As per Govt. Rules)</h3>
+              <p>Thorough safety audits and regulatory compliance inspections to ensure your elevators meet all
+                government guidelines.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY SECTION ===== -->
+    <section id="gallery" class="page-section reveal">
+      <div class="container section-container">
+        <h2 class="section-title">Gallery</h2>
+        <p class="section-subtitle">A Visual Tour of Our Operations</p>
+        <div class="section-content gallery-grid">
+          <div class="gallery-item">
+            <div class="image-box">[ Media 1 ]</div>
+          </div>
+          <div class="gallery-item">
+            <div class="image-box">[ Media 2 ]</div>
+          </div>
+          <div class="gallery-item">
+            <div class="image-box">[ Media 3 ]</div>
+          </div>
+          <div class="gallery-item">
+            <div class="image-box">[ Media 4 ]</div>
+          </div>
+          <div class="gallery-item">
+            <div class="image-box">[ Media 5 ]</div>
+          </div>
+          <div class="gallery-item">
+            <div class="image-box">[ Media 6 ]</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEAM SECTION ===== -->
+    <section id="team" class="page-section reveal bg-light">
+      <div class="container section-container">
+        <h2 class="section-title">Meet The Team</h2>
+        <p class="section-subtitle">The Experts Behind Jay Ambe</p>
+        <div class="section-content team-grid">
+          <div class="team-card">
+            <div class="team-photo">
+              <div class="image-box">[ Photo ]</div>
+            </div>
+            <h3>John Doe</h3>
+            <p>Managing Director</p>
+          </div>
+          <div class="team-card">
+            <div class="team-photo">
+              <div class="image-box">[ Photo ]</div>
+            </div>
+            <h3>Jane Smith</h3>
+            <p>Head of Operations</p>
+          </div>
+          <div class="team-card">
+            <div class="team-photo">
+              <div class="image-box">[ Photo ]</div>
+            </div>
+            <h3>Mike Johnson</h3>
+            <p>Lead Engineer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="page-section reveal">
+      <div class="container section-container">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">Get In Touch For Inquiries & Support</p>
+        <div class="section-content contact-grid">
+          <div class="contact-info">
+            <h3>Head Office</h3>
+            <p>123 Industrial Estate<br>Tech City, TC 12345</p>
+            <p><strong>Phone:</strong> +1 234 567 8900</p>
+            <p><strong>Email:</strong> info@jayambe.com</p>
+          </div>
+          <div class="contact-form">
+            <form action="#" method="POST" class="form-wrapper">
+              <input type="text" placeholder="Your Name" required class="form-input">
+              <input type="email" placeholder="Your Email" required class="form-input">
+              <textarea placeholder="Your Message" rows="5" required class="form-input"></textarea>
+              <button type="submit" class="slide-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Jay Ambe Electricals. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===== SCROLL TO TOP BUTTON ===== -->
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">&#8679;</button>
 
   <script src="script.js"></script>
 </body>

@@ -1,8 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap');
 
 /* ===========================
-   RESET & BASE
+   RESET & BASE (Mobile First)
 =========================== */
+:root {
+  /* Colors */
+  --bg-main: #f5f5f5;
+  --text-main: #222;
+  --nav-bg: #1a1a2e;
+  --nav-link: #eee;
+  --nav-hover: #e94560;
+  --overlay-bg: rgba(0, 0, 0, 0.65);
+  --btn-bg: #1565c0;
+  --btn-hover: #1e88e5;
+  --white: #fff;
+
+  /* Layout constraints */
+  --max-width: 1440px;
+}
+
 *,
 *::before,
 *::after {
@@ -17,9 +33,17 @@ html {
 
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f5f5f5;
-  color: #222;
+  background: var(--bg-main);
+  color: var(--text-main);
   overflow-x: hidden;
+  width: 100%;
+}
+
+/* Container Utility (optional, for center constraints on large screen) */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 /* ===========================
@@ -29,6 +53,8 @@ body {
   position: relative;
   width: 100%;
   line-height: 0;
+  margin-top: 52px;
+  /* Offset for fixed navbar on mobile */
 }
 
 .cover-img {
@@ -37,31 +63,32 @@ body {
   display: block;
 }
 
-/* Desktop cover: tall landscape */
+/* Mobile defaults */
 .cover-img-desktop {
-  height: clamp(220px, 40vw, 380px);
-}
-
-/* Mobile cover: hidden on desktop by default */
-.cover-img-mobile {
   display: none;
-  height: clamp(180px, 55vw, 280px);
+  /* Hidden on mobile */
 }
 
-/* Logo circle — centered at the bottom edge of cover */
+.cover-img-mobile {
+  display: block;
+  /* Visible on mobile */
+  /* fluid height: 200px on tiny phones -> 300px on tablets */
+  height: clamp(200px, 50vw, 300px);
+}
+
 .logo-wrapper {
   position: absolute;
-  bottom: -45px;
+  bottom: -35px;
+  /* Offset to overlap the navbar slightly */
   left: 50%;
   transform: translateX(-50%);
-  /* fluid size: 80px on phones → 110px on desktop */
-  width: clamp(80px, 14vw, 110px);
-  height: clamp(80px, 14vw, 110px);
+  width: clamp(70px, 15vw, 110px);
+  height: clamp(70px, 15vw, 110px);
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid #fff;
+  border: 4px solid var(--white);
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
-  background: #fff;
+  background: var(--white);
   z-index: 10;
 }
 
@@ -75,44 +102,66 @@ body {
 /* ===========================
    NAVIGATION BAR
 =========================== */
-.navbar {
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  background: #1a1a2e;
-  margin-top: clamp(48px, 8vw, 60px);
-  position: relative;
-  z-index: 5;
+  z-index: 1000;
+  background: var(--nav-bg);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* ---------- Hamburger button (hidden on desktop) ---------- */
+.navbar {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+
+  /* Mobile default layout: flex row with hamburger */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  /* allows links to drop below */
+  padding: 0 16px;
+  min-height: 52px;
+}
+
 .hamburger {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 30px;
-  height: 22px;
+  width: 32px;
+  height: 24px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-  flex-shrink: 0;
-  margin-left: auto;
-  /* push to right edge in flex row */
+  margin: 14px 0 14px auto;
+  /* push to right */
   z-index: 20;
+}
+
+/* Accessible touch target for mobile */
+.hamburger:focus,
+.hamburger:active {
+  outline: 2px solid var(--nav-hover);
+  outline-offset: 4px;
 }
 
 .hamburger span {
   display: block;
   width: 100%;
   height: 3px;
-  background: #eee;
+  background: var(--nav-link);
   border-radius: 3px;
   transition: transform 0.3s, opacity 0.3s;
 }
 
-/* Animate hamburger → X when open */
+/* Animate hamburger to X */
 .hamburger.open span:nth-child(1) {
-  transform: translateY(9.5px) rotate(45deg);
+  transform: translateY(10.5px) rotate(45deg);
 }
 
 .hamburger.open span:nth-child(2) {
@@ -120,31 +169,52 @@ body {
 }
 
 .hamburger.open span:nth-child(3) {
-  transform: translateY(-9.5px) rotate(-45deg);
+  transform: translateY(-10.5px) rotate(-45deg);
 }
 
-/* ---------- Nav links ---------- */
 .nav-links {
   list-style: none;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  gap: 0;
+  flex-direction: column;
+  /* Stacked for mobile */
+  align-items: stretch;
+  max-height: 0;
+  /* Hidden by default */
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links.open {
+  max-height: 400px;
+  /* Large enough to show all items */
+}
+
+.nav-links li {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  /* Divider on mobile */
 }
 
 .nav-links li a {
   display: block;
-  padding: 16px 28px;
-  color: #eee;
+  padding: 16px 20px;
+  color: var(--nav-link);
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.5px;
   transition: background 0.25s, color 0.25s;
 }
 
-.nav-links li a:hover {
-  background: #e94560;
-  color: #fff;
+.nav-links li a:hover,
+.nav-links li a:focus {
+  background: var(--nav-hover);
+  color: var(--white);
+  outline: none;
 }
 
 /* ===========================
@@ -152,113 +222,117 @@ body {
 =========================== */
 .slider-section {
   width: 100%;
-  padding: 36px 0 0 0;
-  background: #f5f5f5;
+  padding: 24px 0 0 0;
+  background: var(--bg-main);
   overflow: hidden;
 }
 
 .slider-container {
   position: relative;
   width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
   overflow: hidden;
   background: #000;
 }
 
-/* The sliding track */
 .slider-track {
   display: flex;
   transition: transform 0.6s cubic-bezier(0.77, 0, 0.18, 1);
   will-change: transform;
 }
 
-
-
+.slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  position: relative;
+}
 
 .slide img {
   width: 100%;
-  /* Taller to better showcase portrait images */
-  height: clamp(300px, 60vw, 560px);
+  /* Use clamp for fluid height from small mobile to ultra-wide desktop */
+  height: clamp(300px, 60vw, 600px);
   object-fit: cover;
   object-position: center top;
   display: block;
 }
 
-/* Per-slide overlay (moves with the image) */
-.slide {
-  min-width: 100%;
-  flex-shrink: 0;
-  position: relative;
-  /* overlay anchors to this */
-}
-
+/* Per-slide Overlay (Mobile Default) */
 .slide-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 10;
-  padding: 22px 28px 24px;
-  background: rgba(0, 0, 0, 0.58);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  box-shadow: 0 -6px 28px rgba(0, 0, 0, 0.35);
+  padding: 18px 16px 20px;
+  /* Slimmer padding on mobile */
+  /* Dark solid fallback for older browsers */
+  background: #111;
+  background: var(--overlay-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.35);
 }
 
 .slide-title {
   font-family: 'Rajdhani', 'Segoe UI', sans-serif;
-  font-size: clamp(20px, 3.2vw, 34px);
+  font-size: clamp(22px, 5vw, 36px);
   font-weight: 700;
-  color: #fff;
-  letter-spacing: 1.5px;
+  color: var(--white);
+  letter-spacing: 1px;
   text-transform: uppercase;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
   margin-bottom: 6px;
   line-height: 1.1;
 }
 
 .slide-desc {
   font-family: 'Segoe UI', Arial, sans-serif;
-  font-size: clamp(12px, 1.4vw, 15px);
-  color: rgba(255, 255, 255, 0.88);
-  line-height: 1.5;
-  margin-bottom: 14px;
+  font-size: clamp(13px, 3vw, 16px);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+  margin-bottom: 12px;
   max-width: 600px;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 .slide-btn {
+  appearance: none;
+  -webkit-appearance: none;
   display: inline-block;
-  padding: 8px 24px;
-  background: #1565c0;
-  color: #fff;
+  padding: 10px 20px;
+  /* Touch friendly minimum 44px height roughly */
+  background-color: var(--btn-bg) !important;
+  color: var(--white) !important;
   font-family: 'Rajdhani', 'Segoe UI', sans-serif;
-  font-size: clamp(13px, 1.4vw, 15px);
+  font-size: clamp(14px, 3.5vw, 16px);
   font-weight: 600;
   letter-spacing: 0.8px;
   text-transform: uppercase;
   text-decoration: none;
+  border: none;
   border-radius: 4px;
   box-shadow: 0 3px 12px rgba(21, 101, 192, 0.45);
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  cursor: pointer;
 }
 
-.slide-btn:hover {
-  background: #1e88e5;
+.slide-btn:hover,
+.slide-btn:active {
+  background-color: var(--btn-hover) !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(21, 101, 192, 0.55);
 }
 
-/* ===========================
-   ARROW BUTTONS
-=========================== */
+/* Arrow Buttons (Mobile Default) */
 .arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 20;
-  /* fluid size: 38px on phones → 52px on desktop */
-  width: clamp(38px, 6vw, 52px);
-  height: clamp(38px, 6vw, 52px);
+  /* Make them smaller on mobile to not obscure images */
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -266,14 +340,15 @@ body {
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   color: #000;
-  font-size: clamp(14px, 3vw, 22px);
+  font-size: 14px;
   font-weight: bold;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
   transition: background 0.2s, transform 0.2s;
   user-select: none;
+  /* Increase tap target invisibly if needed, but 38px is generally okay */
 }
 
 .arrow:hover {
@@ -282,138 +357,392 @@ body {
 }
 
 .arrow-left {
-  left: 10px;
+  left: 8px;
+  /* Tighter on mobile edges */
 }
 
 .arrow-right {
-  right: 10px;
+  right: 8px;
+  /* Tighter on mobile edges */
 }
 
 /* ===========================
-   EMPTY REMAINING SECTION
+   SCROLLING & SECTIONS
 =========================== */
-.empty-section {
-  width: 100%;
-  min-height: 300px;
-  background: #f5f5f5;
+.page-section {
+  scroll-margin-top: 60px;
+  /* Offset for sticky navbar */
 }
 
-/* ===========================
-   DETAIL PAGE SECTION
-=========================== */
-.detail-section {
-  width: 100%;
-  min-height: 60vh;
-  background: #f5f5f5;
+.bg-light {
+  background: #eaeaea;
+  /* Light zebra striping for alternate sections */
+}
+
+.section-container {
+  padding: 60px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 60px 24px;
   text-align: center;
 }
 
-.detail-heading {
+.section-title {
   font-family: 'Rajdhani', 'Segoe UI', sans-serif;
-  font-size: clamp(32px, 6vw, 64px);
+  font-size: clamp(32px, 6vw, 48px);
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--nav-bg);
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+  position: relative;
 }
 
-.detail-sub {
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--nav-hover);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.section-subtitle {
   font-size: clamp(14px, 2vw, 18px);
   color: #555;
   letter-spacing: 0.5px;
+  margin-bottom: 40px;
+}
+
+/* Base Image Placeholder */
+.image-box {
+  width: 100%;
+  height: 200px;
+  background: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-weight: 500;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+/* Responsive Grids */
+.section-content {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  gap: 32px;
+  text-align: left;
+}
+
+/* About Grid (1 col mobile, 2 col desktop) */
+.about-grid {
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+/* 3-Column Auto Grids (Infrastructure, Services, Team) */
+.infra-grid,
+.services-grid,
+.team-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.infra-card,
+.service-card,
+.team-card,
+.product-card {
+  background: var(--white);
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.infra-card:hover,
+.service-card:hover,
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.infra-card h3,
+.service-card h3,
+.team-card h3,
+.product-card h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 22px;
+  color: var(--nav-bg);
+  margin-bottom: 10px;
+}
+
+.infra-card p,
+.service-card p,
+.team-card p,
+.product-card p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Products Grid */
+.products-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.product-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info p {
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.gallery-item .image-box {
+  margin: 0;
+  height: 240px;
+}
+
+/* Contact Grid */
+.contact-grid {
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.contact-info p {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #444;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--nav-hover);
 }
 
 /* ===========================
-   RESPONSIVE — TABLET (≤ 768px)
+   SCROLL TO TOP BUTTON
 =========================== */
-@media (max-width: 768px) {
+.scroll-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  background: var(--btn-bg);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background 0.3s;
+  z-index: 1000;
+}
 
-  /* Swap cover images */
-  .cover-img-desktop {
-    display: none;
-  }
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 
-  .cover-img-mobile {
-    display: block;
-  }
+.scroll-to-top:hover {
+  background: var(--btn-hover);
+}
 
-  /* Navbar: flex-row so hamburger sits inline at the right */
+/* ===========================
+   REVEAL ANIMATIONS
+=========================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+.site-footer {
+  background: var(--nav-bg);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 14px;
+}
+
+/* ===========================
+   MEDIA QUERIES (Min-Width)
+=========================== */
+
+/* Tablet & Up (>= 768px) */
+@media (min-width: 768px) {
+
   .navbar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 0 18px;
-    min-height: 52px;
+    padding: 0 24px;
+
+    /* Change from column to row for links if we want */
+    /* Wait, checking user requirement: Hamburger or collapsible for small screens. At 768px, do we show horizontal? Let's show horizontal navbar for tablet and up. */
+    flex-wrap: nowrap;
+    justify-content: center;
   }
 
   .hamburger {
-    display: flex;
-    padding: 15px 0;
-    /* gives the bar enough height */
+    display: none;
+    /* Hide hamburger on tablet */
   }
 
-  /* Nav links: full-width column below the hamburger row */
+  /* Force nav-links to show as a row */
   .nav-links {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    margin-top: 0;
-  }
-
-  /* Large enough to show all 5 items (each ~50px tall) with room to spare */
-  .nav-links.open {
-    max-height: 600px;
+    max-height: none;
+    /* remove mobile toggle limitation */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    overflow: visible;
   }
 
   .nav-links li {
-    width: 100%;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: none;
+    /* Remove mobile dividers */
+    width: auto;
   }
 
   .nav-links li a {
-    padding: 14px 20px;
-    font-size: 16px;
-    display: block;
-  }
-
-  .slider-section {
-    padding-top: 24px;
-  }
-}
-
-/* ===========================
-   RESPONSIVE — PHONE (≤ 480px)
-=========================== */
-@media (max-width: 480px) {
-  .navbar {
-    padding: 12px 16px;
-  }
-
-  .nav-links li a {
-    padding: 12px 16px;
+    padding: 16px 24px;
     font-size: 15px;
   }
 
+  .slider-section {
+    padding-top: 36px;
+  }
+
+  .slide-overlay {
+    padding: 24px 32px 28px;
+    /* More breathing room */
+  }
+
+  .arrow {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+
   .arrow-left {
-    left: 6px;
+    left: 16px;
   }
 
   .arrow-right {
-    right: 6px;
+    right: 16px;
   }
 
-  .slider-section {
-    padding-top: 16px;
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .section-container {
+    padding: 80px 24px;
+  }
+}
+
+/* Desktop & Up (>= 1025px) */
+@media (min-width: 1025px) {
+
+  /* Swap cover images */
+  .cover-img-mobile {
+    display: none;
+  }
+
+  .cover-img-desktop {
+    display: block;
+    height: clamp(250px, 30vw, 400px);
+  }
+
+  .logo-wrapper {
+    bottom: -45px;
+  }
+
+  .nav-links li a {
+    padding: 16px 32px;
+  }
+
+  .arrow {
+    width: 54px;
+    height: 54px;
+    font-size: 20px;
+  }
+
+  .arrow-left {
+    left: 20px;
+  }
+
+  .arrow-right {
+    right: 20px;
+  }
+
+  .slide-overlay {
+    padding: 32px 40px 36px;
+  }
+
+  /* Optional: Limit extreme stretching of text block on wide screens */
+  .slide-desc {
+    max-width: 700px;
   }
 }
