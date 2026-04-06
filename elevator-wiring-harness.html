@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elevator Wiring Harness – Jay Ambe Electricals</title>
+  <meta name="description" content="Explore Jay Ambe Electricals' range of Elevator Wiring Harnesses including Machine Room Harness, Field Harness, and Cartop Harness." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ===== PAGE-SPECIFIC OVERRIDES ===== */
+
+    /* Hero banner for the product page */
+    .product-hero {
+      background: var(--nav-bg);
+      padding: 110px 24px 48px;
+      text-align: center;
+    }
+
+    .product-hero .breadcrumb {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .product-hero .breadcrumb a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .product-hero .breadcrumb a:hover {
+      color: var(--nav-hover);
+    }
+
+    .product-hero h1 {
+      font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+      font-size: clamp(28px, 6vw, 52px);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .product-hero h1 span {
+      color: var(--nav-hover);
+    }
+
+    .product-hero p {
+      font-size: clamp(14px, 2vw, 18px);
+      color: rgba(255,255,255,0.7);
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Subcategory section */
+    .subcat-section {
+      padding: 60px 24px;
+    }
+
+    .subcat-section:nth-child(odd) {
+      background: var(--bg-main);
+    }
+
+    .subcat-section:nth-child(even) {
+      background: #eaeaea;
+    }
+
+    .subcat-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Subcategory heading */
+    .subcat-heading {
+      font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      color: var(--nav-bg);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .subcat-heading::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 4px;
+      background: var(--nav-hover);
+      border-radius: 2px;
+      margin-top: 8px;
+    }
+
+    .subcat-subtitle {
+      font-size: clamp(13px, 1.8vw, 16px);
+      color: #666;
+      margin-bottom: 36px;
+      margin-top: 8px;
+    }
+
+    /* Product grid — same 3-per-row layout as index */
+    .subcat-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    @media (min-width: 768px) {
+      .subcat-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Product card — identical to index.html product-card */
+    .subcat-grid .product-card {
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+
+    .subcat-grid .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    /* Image placeholder — keeps exact same look as index homepage */
+    .subcat-grid .product-img-placeholder {
+      width: 100%;
+      height: 220px;
+      background: #d4d4d4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .subcat-grid .product-info {
+      padding: 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .subcat-grid .product-info h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 20px;
+      color: var(--nav-bg);
+      margin-bottom: 10px;
+    }
+
+    .subcat-grid .product-info p {
+      color: #555;
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== HEADER / NAVIGATION (Fixed Top) ===== -->
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home" class="nav-item">Home</a></li>
+        <li><a href="index.html#about" class="nav-item">About</a></li>
+        <li><a href="index.html#infrastructure" class="nav-item">Infrastructure</a></li>
+        <li><a href="index.html#products" class="nav-item active">Products</a></li>
+        <li><a href="index.html#services" class="nav-item">Services</a></li>
+        <li><a href="index.html#gallery" class="nav-item">Gallery</a></li>
+        <li><a href="index.html#team" class="nav-item">Team</a></li>
+        <li><a href="index.html#contact" class="nav-item">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== PRODUCT HERO BANNER ===== -->
+    <div class="product-hero">
+      <p class="breadcrumb">
+        <a href="index.html">Home</a> &rsaquo;
+        <a href="index.html#products">Our Products</a> &rsaquo;
+        Elevator Wiring Harness
+      </p>
+      <h1>Elevator <span>Wiring Harness</span></h1>
+      <p>Precision-engineered wiring harnesses for every zone of your elevator system — from the machine room to the cartop — ensuring safety, reliability, and seamless electrical connectivity.</p>
+    </div>
+
+    <!-- ===== SUBCATEGORY 1: MACHINE ROOM HARNESS ===== -->
+    <section class="subcat-section reveal">
+      <div class="subcat-inner">
+        <h2 class="subcat-heading">Machine Room Harness</h2>
+        <p class="subcat-subtitle">Robust harnesses engineered for the core control environment</p>
+
+        <div class="subcat-grid">
+
+          <!-- Card 1 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Power Cable</h3>
+              <p>Heavy-duty power cable supplying the main drive and control circuits in the machine room, built for continuous, reliable electrical delivery.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Earthing Cable</h3>
+              <p>Dedicated earthing cable ensuring proper grounding of all machine room electrical equipment for personnel safety and equipment protection.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>UPS/ARD Cable</h3>
+              <p>Specialised cable for UPS and Automatic Rescue Device systems, enabling seamless switchover to battery backup during power failures.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Break Cable</h3>
+              <p>Purpose-built brake cable connecting the electromagnetic brake coil to the control panel, ensuring precise and safe stopping at every halt.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>OSG Cable</h3>
+              <p>Over-Speed Governor (OSG) cable linking the speed monitoring device to the safety circuit, triggering a safety stop if rated speed is exceeded.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Motor Cable</h3>
+              <p>High-current rated motor cable connecting the VFD to the hoist motor, delivering stable three-phase power for smooth and efficient drive operation.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SUBCATEGORY 2: FIELD HARNESS ===== -->
+    <section class="subcat-section reveal">
+      <div class="subcat-inner">
+        <h2 class="subcat-heading">Field Harness</h2>
+        <p class="subcat-subtitle">Flexible, durable wiring solutions for shaft and landing installations</p>
+
+        <div class="subcat-grid">
+
+          <!-- Card 1 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Lock &amp; Limit</h3>
+              <p>Wiring harness connecting all landing door lock contacts and limit switches in series through the safety chain, ensuring safe door-closed confirmation at each floor.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Extension for Fire &amp; Alarm</h3>
+              <p>Extension harness integrating fire alarm and emergency recall circuits with the elevator control system for compliance with fire safety regulations.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Flate Traveling Cable (12 Core)</h3>
+              <p>12-core flat traveling cable for continuous flex applications, connecting the machine room panel to the car with durable multi-strand conductors.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Flate Traveling Cable (24 Core)</h3>
+              <p>24-core flat traveling cable offering expanded conductor capacity for elevators with higher data and power demands across all floors.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Round Traveling Cable (12 Core)</h3>
+              <p>Round-jacket 12-core traveling cable designed for installations where a round profile is preferred, offering excellent flexibility and long service life.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Display &amp; Call</h3>
+              <p>Harness dedicated to floor indicator displays and hall call button panels, carrying both power and data signals for accurate floor position readout.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SUBCATEGORY 3: CARTOP HARNESS ===== -->
+    <section class="subcat-section reveal">
+      <div class="subcat-inner">
+        <h2 class="subcat-heading">Cartop Harness</h2>
+        <p class="subcat-subtitle">Specialised harnesses for car-mounted equipment and safety devices</p>
+
+        <div class="subcat-grid">
+
+          <!-- Card 1 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>COP</h3>
+              <p>Car Operating Panel (COP) harness connecting floor call buttons, door control outputs, and indicator signals to the car controller through a single organised loom.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Door Drive/Sensor/Cargate</h3>
+              <p>Integrated harness for the door operator motor, door open/close sensors, and cargate switch — enabling smooth, safe automatic door operation.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Safety</h3>
+              <p>Cartop safety harness wiring the emergency stop, inspection socket, and overspeed governor rope tensioner switch into a single inspectable assembly.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Light</h3>
+              <p>Car lighting harness supplying interior cabin lights and emergency light from the cartop, keeping the car well-lit at all times for passenger safety.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Fan</h3>
+              <p>Dedicated fan harness powering the car ventilation fan from the cartop, ensuring consistent airflow and passenger comfort throughout operation.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Reed Sensor</h3>
+              <p>Wiring harness for reed sensor connections used in floor levelling and zone detection, providing precise positional feedback to the elevator controller.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Retering Cam</h3>
+              <p>Cam and sensor harness assembly for retiring cam mechanisms, ensuring precise door interlock engagement and disengagement at each landing.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Cargate Switch</h3>
+              <p>Harness for the cargate door switch circuit, confirming that the car gate is fully closed before permitting elevator movement.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Speacker</h3>
+              <p>Speaker wiring harness routing audio signals for voice announcements and alarm tones within the car cabin for passenger communication.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <!-- Card 10 -->
+          <div class="product-card">
+            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-info">
+              <h3>Display to Button</h3>
+              <p>Interconnection harness linking the COP display board to individual call buttons, transmitting registration signals and indicator feedback reliably.</p>
+              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Jay Ambe Electricals. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===== SCROLL TO TOP BUTTON ===== -->
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">&#8679;</button>
+
+  <script>
+    /* ===========================
+       NAVIGATION
+    =========================== */
+    (function () {
+      const hamburger = document.getElementById('hamburger');
+      const navLinks  = document.getElementById('navLinks');
+
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+          const isOpen = navLinks.classList.toggle('open');
+          hamburger.classList.toggle('open', isOpen);
+          hamburger.setAttribute('aria-expanded', isOpen);
+        });
+      }
+
+      const navItems = navLinks ? navLinks.querySelectorAll('.nav-item') : [];
+      navItems.forEach(item => {
+        item.addEventListener('click', () => {
+          if (navLinks && hamburger) {
+            navLinks.classList.remove('open');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    })();
+
+    /* ===========================
+       REVEAL ANIMATIONS
+    =========================== */
+    (function () {
+      const reveals = document.querySelectorAll('.reveal');
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        reveals.forEach(el => observer.observe(el));
+      } else {
+        reveals.forEach(el => el.classList.add('active'));
+      }
+    })();
+
+    /* ===========================
+       SCROLL TO TOP
+    =========================== */
+    (function () {
+      const btn = document.getElementById('scrollToTop');
+      if (!btn) return;
+
+      window.addEventListener('scroll', () => {
+        btn.classList.toggle('show', window.pageYOffset > 400);
+      });
+
+      btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+
+</body>
+
+</html>
