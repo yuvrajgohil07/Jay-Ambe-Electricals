@@ -37,20 +37,21 @@
     // Detect current section
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
       // Offset by ~100px to trigger slightly before crossing the exact pixel line
       if (scrollY >= (sectionTop - 100)) {
         current = section.getAttribute('id');
       }
     });
 
-    // Update active class on nav items
-    navItems.forEach(item => {
-      item.classList.remove('active');
-      if (item.getAttribute('href') === `#${current}`) {
-        item.classList.add('active');
-      }
-    });
+    // Update active class on single-page nav items only.
+    if (sections.length && current) {
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === `#${current}`) {
+          item.classList.add('active');
+        }
+      });
+    }
 
     // Toggle scroll-to-top button
     if (scrollToTopBtn) {
@@ -74,7 +75,7 @@
    REVEAL ANIMATIONS (Intersection Observer)
 =========================== */
 (function () {
-  const reveals = document.querySelectorAll('.page-section.reveal, .slider-section.reveal');
+  const reveals = document.querySelectorAll('.reveal');
 
   if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -205,4 +206,43 @@
 
   /* Kick off */
   startAuto();
+})();
+
+/* ===========================
+   NUMBER COUNT-UP ANIMATION (About Section Stats)
+=========================== */
+(function() {
+  const statNumbers = document.querySelectorAll('.stat-number');
+  let hasAnimated = false;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasAnimated) {
+        hasAnimated = true;
+        
+        statNumbers.forEach(stat => {
+          const target = +stat.getAttribute('data-target');
+          const duration = 2000; // ms
+          const increment = target / (duration / 16); // 60fps
+          
+          let current = 0;
+          const updateCount = () => {
+            current += increment;
+            if (current < target) {
+              stat.innerText = Math.ceil(current);
+              requestAnimationFrame(updateCount);
+            } else {
+              stat.innerText = target;
+            }
+          };
+          updateCount();
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const statsContainer = document.querySelector('.about-stats-container');
+  if (statsContainer) {
+    observer.observe(statsContainer);
+  }
 })();

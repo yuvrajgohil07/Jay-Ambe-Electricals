@@ -57,46 +57,340 @@ body {
   /* Offset for fixed navbar on mobile */
 }
 
-.cover-img {
+/* Custom Hero Banner */
+.hero-banner-custom {
   width: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Mobile defaults */
-.cover-img-desktop {
-  display: none;
-  /* Hidden on mobile */
-}
-
-.cover-img-mobile {
-  display: block;
-  /* Visible on mobile */
-  /* fluid height: 200px on tiny phones -> 300px on tablets */
-  height: clamp(200px, 50vw, 300px);
-}
-
-.logo-wrapper {
-  position: absolute;
-  bottom: -35px;
-  /* Offset to overlap the navbar slightly */
-  left: 50%;
-  transform: translateX(-50%);
-  width: clamp(70px, 15vw, 110px);
-  height: clamp(70px, 15vw, 110px);
-  border-radius: 50%;
+  padding: 40px 15px; /* Added breathing room */
+  background: linear-gradient(-45deg, #0f172a, #1e3a8a, #1e40af, #172554);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative;
   overflow: hidden;
-  border: 4px solid var(--white);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
-  background: var(--white);
-  z-index: 10;
 }
 
-.logo-img {
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Background Grid Overlay */
+.hero-bg-grid {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Floating Energy Particles */
+.particles {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+.particle {
+  position: absolute;
+  width: 4px; height: 4px;
+  background: #60a5fa;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #60a5fa, 0 0 20px #93c5fd;
+  bottom: -10px;
+  animation: floatUp 8s infinite linear;
+}
+.particle:nth-child(1) { left: 15%; animation-duration: 7s; animation-delay: 1s; }
+.particle:nth-child(2) { left: 35%; animation-duration: 9s; animation-delay: 3s; width: 6px; height: 6px; }
+.particle:nth-child(3) { left: 55%; animation-duration: 6s; animation-delay: 0s; }
+.particle:nth-child(4) { left: 75%; animation-duration: 10s; animation-delay: 4s; width: 3px; height: 3px; }
+.particle:nth-child(5) { left: 85%; animation-duration: 8s; animation-delay: 2s; }
+.particle:nth-child(6) { left: 25%; animation-duration: 11s; animation-delay: 5s; }
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-500px) scale(0); opacity: 0; }
+}
+
+.hero-banner-border {
+  width: 100%;
+  max-width: 1400px;
+  border: none;
+  position: relative;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  box-sizing: border-box;
+}
+
+.hero-top-right-icon {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 6px 12px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Rajdhani', sans-serif;
+  z-index: 5;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, background 0.3s;
+  cursor: pointer;
+}
+
+.hero-top-right-icon:hover {
+  transform: scale(1.05) translateY(-2px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.hero-top-right-icon .icon-arrows {
+  font-size: 18px;
+  line-height: 1;
+  margin-bottom: 2px;
+  letter-spacing: 2px;
+  color: #60a5fa; /* Modern blue tint */
+}
+
+.hero-top-right-icon .icon-text {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hero-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 15px;
+  min-height: clamp(250px, 35vw, 400px);
+}
+
+.hero-logo-box {
+  flex: 0 0 clamp(160px, 22vw, 320px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Subtle glowing orb behind the logo */
+.hero-logo-box::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background: rgba(96, 165, 250, 0.2);
+  filter: blur(40px);
+  border-radius: 50%;
+  z-index: 0;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(0.9); opacity: 0.5; }
+  100% { transform: scale(1.2); opacity: 1; }
+}
+
+@keyframes floatLogo {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+.hero-logo-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  z-index: 3;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 25px rgba(59, 130, 246, 0.4));
+  animation: floatLogo 6s ease-in-out infinite;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s;
+  cursor: pointer;
+}
+
+.hero-logo-box:hover img {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 40px rgba(59, 130, 246, 0.8));
+  animation-play-state: paused;
+}
+
+.hero-text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Left align for a more modern editorial look */
+  justify-content: center;
+  text-align: left;
+  line-height: 1.3;
+  flex: 1;
+}
+
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes neonFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { filter: drop-shadow(0 4px 10px rgba(59,130,246,0.5)); }
+  20%, 22%, 24%, 55% { filter: drop-shadow(0 0 0 rgba(59,130,246,0)); }
+}
+
+.hero-main-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: clamp(32px, 5vw, 65px);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #ffffff, #93c5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards, neonFlicker 3s infinite 1s;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-manufacturer {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: clamp(16px, 2.5vw, 24px);
+  color: #60a5fa; /* Soft bright blue */
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  opacity: 0;
+  animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+.hero-highlight-bar {
+  /* Glassmorphism Pill */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: clamp(16px, 2vw, 22px);
+  padding: 12px 30px;
+  margin-bottom: 20px;
+  border-radius: 50px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  width: auto;
+  max-width: 100%;
+  display: inline-block;
+  opacity: 0;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+
+/* Scanning light effect */
+.hero-highlight-bar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: skewX(-20deg);
+  animation: scanLight 3s infinite;
+}
+
+@keyframes scanLight {
+  0% { left: -100%; }
+  20% { left: 200%; }
+  100% { left: 200%; }
+}
+
+.hero-highlight-bar:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 40px rgba(96, 165, 250, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-authorised {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.5vw, 18px);
+  color: #cbd5e1;
+  letter-spacing: 1px;
+  opacity: 0;
+  animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+.hero-manufacturer {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: clamp(16px, 3vw, 24px);
+  color: white;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-highlight-bar {
+  background-color: white;
+  color: #182244;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: clamp(15px, 2.5vw, 28px);
+  padding: 10px 30px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  width: auto;
+  max-width: 100%;
+  text-align: center;
+}
+
+.hero-authorised {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: clamp(14px, 2vw, 22px);
+  color: white;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 768px) {
+  .hero-content-wrapper {
+    flex-direction: column;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .hero-text-box {
+    align-items: center; /* Center align on mobile */
+    text-align: center;
+  }
+  
+  .hero-banner-border {
+    padding: 10px;
+  }
+  
+  .hero-highlight-bar {
+    padding: 6px 12px;
+  }
 }
 
 /* ===========================
@@ -438,17 +732,234 @@ body {
   text-align: left;
 }
 
-/* About Grid (1 col mobile, 2 col desktop) */
-.about-grid {
-  grid-template-columns: 1fr;
-  align-items: center;
+/* ===== ADVANCED ABOUT SECTION ===== */
+
+.about-vision-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  border-left: 5px solid #1e3a8a;
 }
 
-.about-text p {
+@media (min-width: 768px) {
+  .about-vision-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+}
+
+.about-vision-content {
+  flex: 1;
+}
+
+.about-vision-content h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 28px;
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+.about-vision-content p {
   font-size: 16px;
   line-height: 1.6;
   color: #444;
-  margin-bottom: 16px;
+  margin-bottom: 15px;
+}
+
+.about-vision-graphics {
+  flex: 0 0 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vision-icon {
+  font-size: 80px;
+  color: #3b82f6;
+  opacity: 0.15;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+}
+
+/* Stats Container */
+.about-stats-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: clamp(20px, 3vw, 40px);
+  margin-bottom: 60px;
+  overflow-x: auto;
+  padding-bottom: 15px; /* Spacing for scrollbar */
+}
+
+.stat-box {
+  flex: 1 1 0;
+  min-width: 140px;
+  background: linear-gradient(135deg, #1e3a8a, #111827);
+  color: white;
+  padding: 30px 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(24, 34, 68, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.stat-number {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.stat-plus {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 700;
+  color: #60a5fa;
+  margin-left: 2px;
+}
+
+.stat-label {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: clamp(10px, 1.2vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Satisfied Customers Marquee */
+.about-clients {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.about-clients h3, .about-testimonials h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 32px;
+  color: #1e3a8a;
+  margin-bottom: 30px;
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+/* Fade edges */
+.marquee-container::before,
+.marquee-container::after {
+  content: '';
+  position: absolute;
+  top: 0; width: 50px; height: 100%;
+  z-index: 2;
+}
+.marquee-container::before {
+  left: 0; background: linear-gradient(to right, #f8fafc, transparent);
+}
+.marquee-container::after {
+  right: 0; background: linear-gradient(to left, #f8fafc, transparent);
+}
+
+.marquee-content {
+  display: flex;
+  width: fit-content;
+  animation: scrollMarquee 20s linear infinite;
+  gap: 50px;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+.client-logo {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #94a3b8;
+  padding: 10px 20px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: color 0.3s, border-color 0.3s;
+  cursor: default;
+}
+
+.client-logo:hover {
+  color: #1e3a8a;
+  border-color: #1e3a8a;
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 25px)); }
+}
+
+/* Customer Testimonials */
+.about-testimonials {
+  text-align: center;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-align: left;
+  border-top: 4px solid #3b82f6;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.testimonial-card .stars {
+  color: #f59e0b;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.testimonial-card .feedback {
+  font-style: italic;
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.testimonial-card .customer-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1e3a8a;
 }
 
 /* 3-Column Auto Grids (Infrastructure, Services, Team) */
@@ -523,6 +1034,149 @@ body {
 .product-info p {
   margin-bottom: 20px;
   flex-grow: 1;
+}
+
+/* ===========================
+   PRODUCT DETAIL PAGES
+=========================== */
+.product-hero.animated-product-hero {
+  background: linear-gradient(-45deg, #0f172a, #1e3a8a, #1e40af, #172554);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-hero.animated-product-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.product-hero.animated-product-hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+.product-hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.product-hero-particles .particle:nth-child(1) { left: 12%; animation-delay: 0.5s; }
+.product-hero-particles .particle:nth-child(2) { left: 28%; animation-delay: 2s; }
+.product-hero-particles .particle:nth-child(3) { left: 48%; animation-delay: 0s; }
+.product-hero-particles .particle:nth-child(4) { left: 68%; animation-delay: 3.5s; }
+.product-hero-particles .particle:nth-child(5) { left: 84%; animation-delay: 1.5s; }
+
+.hero-kicker-pill {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50px;
+  color: #fff;
+  font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+  font-size: clamp(15px, 2.2vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  margin-top: 22px;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 10px 24px;
+  position: relative;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
+}
+
+.hero-kicker-pill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-20deg);
+  animation: scanLight 3s infinite 1.2s;
+}
+
+.product-page-section {
+  padding: 60px 24px;
+  background: var(--bg-main);
+}
+
+.product-page-section:nth-of-type(even) {
+  background: #eaeaea;
+}
+
+.product-page-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-page-heading {
+  font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700;
+  color: var(--nav-bg);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  position: relative;
+  display: inline-block;
+}
+
+.product-page-heading::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: var(--nav-hover);
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+.product-page-subtitle {
+  font-size: clamp(13px, 1.8vw, 16px);
+  color: #666;
+  margin-bottom: 36px;
+  margin-top: 8px;
+}
+
+.product-page-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.product-img-placeholder {
+  width: 100%;
+  height: 220px;
+  background: #d4d4d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+@media (min-width: 768px) {
+  .product-page-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Gallery Grid */
@@ -692,7 +1346,6 @@ body {
     right: 16px;
   }
 
-  .about-grid,
   .contact-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -709,19 +1362,7 @@ body {
 /* Desktop & Up (>= 1025px) */
 @media (min-width: 1025px) {
 
-  /* Swap cover images */
-  .cover-img-mobile {
-    display: none;
-  }
-
-  .cover-img-desktop {
-    display: block;
-    height: clamp(250px, 30vw, 400px);
-  }
-
-  .logo-wrapper {
-    bottom: -45px;
-  }
+  /* Desktop overrides for custom hero if needed */
 
   .nav-links li a {
     padding: 16px 32px;
