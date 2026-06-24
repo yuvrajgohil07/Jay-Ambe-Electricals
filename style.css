@@ -1391,3 +1391,427 @@ body {
     max-width: 700px;
   }
 }
+
+/* ===========================
+   PHONE OPTIMIZATION
+=========================== */
+@media (max-width: 767px) {
+  body {
+    line-height: 1.45;
+  }
+
+  .site-header {
+    min-height: 56px;
+  }
+
+  .navbar {
+    min-height: 56px;
+    padding: 0 18px;
+  }
+
+  .navbar::before {
+    content: 'Jay Ambe';
+    color: var(--white);
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .hamburger {
+    width: 30px;
+    height: 22px;
+    margin: 17px 0 17px auto;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(9.5px) rotate(45deg);
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-9.5px) rotate(-45deg);
+  }
+
+  .nav-links.open {
+    max-height: 620px;
+    padding-bottom: 10px;
+  }
+
+  .nav-links li a {
+    padding: 13px 16px;
+    font-size: 15px;
+  }
+
+  .hero {
+    margin-top: 56px;
+  }
+
+  .hero-banner-custom {
+    min-height: auto;
+    padding: 22px 14px 28px;
+  }
+
+  .hero-banner-border {
+    padding: 8px 0 0;
+  }
+
+  .hero-top-right-icon {
+    display: none;
+  }
+
+  .hero-content-wrapper {
+    gap: 16px;
+    min-height: 0;
+    margin-top: 0;
+  }
+
+  .hero-logo-box {
+    flex: 0 0 132px;
+    width: 132px;
+    max-width: 45vw;
+  }
+
+  .hero-logo-box::after {
+    width: 90%;
+    height: 90%;
+    filter: blur(26px);
+  }
+
+  .hero-main-title {
+    font-size: clamp(28px, 11vw, 42px);
+    letter-spacing: 0;
+    line-height: 1.05;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .hero-manufacturer {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .hero-highlight-bar {
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: clamp(14px, 4.5vw, 18px);
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .hero-authorised {
+    max-width: 300px;
+    font-size: 13px;
+    line-height: 1.35;
+    letter-spacing: 0;
+  }
+
+  .slider-section {
+    padding-top: 14px;
+  }
+
+  .slide img {
+    height: 245px;
+    object-position: center;
+  }
+
+  .slide-overlay {
+    position: static;
+    padding: 18px 18px 20px;
+    background: var(--nav-bg);
+    box-shadow: none;
+  }
+
+  .slide-title {
+    font-size: 24px;
+    letter-spacing: 0.5px;
+  }
+
+  .slide-desc {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .slide-btn,
+  .hc-learn-btn {
+    min-height: 44px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 11px 16px;
+  }
+
+  .arrow {
+    top: 122px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.78);
+  }
+
+  .section-container {
+    padding: 44px 16px;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 9vw, 36px);
+    letter-spacing: 0.5px;
+    line-height: 1.08;
+  }
+
+  .section-subtitle {
+    margin-bottom: 26px;
+    line-height: 1.45;
+  }
+
+  .section-content {
+    gap: 20px;
+  }
+
+  .about-vision-card {
+    padding: 24px 18px;
+    margin-bottom: 32px;
+    border-left-width: 4px;
+    text-align: left;
+  }
+
+  .about-vision-content h3,
+  .about-clients h3,
+  .about-testimonials h3 {
+    font-size: 25px;
+    line-height: 1.15;
+  }
+
+  .about-vision-content p {
+    font-size: 15px;
+  }
+
+  .about-vision-graphics {
+    display: none;
+  }
+
+  .about-stats-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 36px;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  .stat-box {
+    min-width: 0;
+    padding: 20px 8px;
+    border-radius: 8px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    line-height: 1.25;
+  }
+
+  .marquee-container {
+    border-radius: 0;
+    margin-inline: -16px;
+    width: calc(100% + 32px);
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .testimonial-card {
+    padding: 22px 18px;
+    border-radius: 8px;
+  }
+
+  .infra-grid,
+  .services-grid,
+  .team-grid,
+  .products-grid,
+  .gallery-grid,
+  .contact-grid,
+  .product-page-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .infra-card,
+  .service-card,
+  .team-card,
+  .product-card {
+    border-radius: 8px;
+  }
+
+  .product-img,
+  .product-img-placeholder,
+  .image-box {
+    height: 175px;
+  }
+
+  .gallery-item .image-box {
+    height: 185px;
+  }
+
+  .product-info {
+    padding: 18px;
+  }
+
+  .infra-card h3,
+  .service-card h3,
+  .team-card h3,
+  .product-card h3 {
+    font-size: 21px;
+    line-height: 1.15;
+    letter-spacing: 0;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
+
+  .form-input {
+    font-size: 16px;
+  }
+
+  .scroll-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .product-hero {
+    padding: 86px 16px 38px !important;
+  }
+
+  .product-hero .breadcrumb {
+    display: block;
+    max-width: 100%;
+    font-size: 12px !important;
+    line-height: 1.45;
+    letter-spacing: 0 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .product-hero h1 {
+    font-size: clamp(30px, 10.5vw, 42px) !important;
+    line-height: 1.05 !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .product-hero p {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+
+  .hero-kicker-pill {
+    width: 100%;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.25;
+    letter-spacing: 0.5px;
+    padding: 10px 14px;
+    margin-top: 18px;
+  }
+
+  .product-page-section {
+    padding: 42px 16px;
+  }
+
+  .product-page-heading {
+    font-size: clamp(25px, 8vw, 32px);
+    line-height: 1.08;
+    letter-spacing: 0.5px;
+  }
+
+  .product-page-subtitle {
+    margin-bottom: 22px;
+    line-height: 1.45;
+  }
+
+  .product-page-grid {
+    gap: 18px;
+  }
+
+  .harness-overview {
+    padding: 42px 16px 52px !important;
+  }
+
+  .harness-overview-header {
+    margin-bottom: 28px !important;
+  }
+
+  .harness-overview-header .section-tag {
+    letter-spacing: 1.5px !important;
+  }
+
+  .harness-overview-header h2 {
+    font-size: clamp(27px, 8.5vw, 34px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .harness-overview-header p {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+
+  .harness-cards {
+    gap: 18px !important;
+  }
+
+  .harness-card {
+    border-radius: 8px !important;
+  }
+
+  .harness-card-header {
+    padding: 22px 18px !important;
+  }
+
+  .harness-card-header h3 {
+    font-size: clamp(23px, 7.5vw, 30px) !important;
+    line-height: 1.1 !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .harness-card-body {
+    padding: 20px 18px 22px !important;
+  }
+
+  .harness-card-body p {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+  }
+
+  .hc-tags {
+    gap: 6px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .hc-tag {
+    border-radius: 6px !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-main-title,
+  .product-hero h1 {
+    font-size: 30px !important;
+  }
+
+  .hero-logo-box {
+    flex-basis: 116px;
+    width: 116px;
+  }
+
+  .about-stats-container {
+    grid-template-columns: 1fr;
+  }
+}
