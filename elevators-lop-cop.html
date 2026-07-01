@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elevators LOP COP - Jay Ambe Electricals</title>
+  <meta name="description" content="Explore Jay Ambe Electricals' range of Elevator Landing Operating Panels (LOP) and Car Operating Panels (COP) for intuitive and safe elevator control." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .product-hero {
+      background: var(--nav-bg);
+      padding: 110px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-size: 50px 50px;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      pointer-events: none;
+    }
+    .product-hero .breadcrumb {
+      position: relative;
+      z-index: 1;
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      opacity: 0;
+      animation: slideUpFade 0.7s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
+    }
+    .product-hero .breadcrumb a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .product-hero .breadcrumb a:hover { color: var(--nav-hover); }
+    .product-hero h1 {
+      position: relative;
+      z-index: 1;
+      font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+      font-size: clamp(28px, 6vw, 52px);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: slideUpFade 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s forwards;
+    }
+    .product-hero h1 span { color: var(--nav-hover); }
+    .product-hero p {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(14px, 2vw, 18px);
+      color: rgba(255,255,255,0.7);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.6;
+      opacity: 0;
+      animation: slideUpFade 0.8s cubic-bezier(0.16,1,0.3,1) 0.5s forwards;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar">
+      <div style="font-family:'Rajdhani',sans-serif;font-weight:700;color:white;font-size:24px;text-transform:uppercase;letter-spacing:2px;line-height:1;">
+        <a href="index.html" style="color:white;text-decoration:none;">Jay Ambe</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home" class="nav-item">Home</a></li>
+        <li><a href="index.html#about" class="nav-item">About</a></li>
+        <li><a href="index.html#infrastructure" class="nav-item">Infrastructure</a></li>
+        <li><a href="index.html#products" class="nav-item active">Products</a></li>
+        <li><a href="index.html#services" class="nav-item">Services</a></li>
+        <li><a href="index.html#gallery" class="nav-item">Gallery</a></li>
+        <li><a href="index.html#team" class="nav-item">Team</a></li>
+        <li><a href="index.html#contact" class="nav-item">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="product-hero">
+      <p class="breadcrumb">
+        <a href="index.html">Home</a> &rsaquo;
+        <a href="index.html#products">Our Products</a> &rsaquo;
+        Elevators LOP COP
+      </p>
+      <h1>Elevators <span>LOP &amp; COP</span></h1>
+      <p>Modern, intuitive Landing Operating Panels and Car Operating Panels engineered for seamless passenger interaction and precise elevator control.</p>
+    </div>
+
+    <section class="page-section reveal" style="padding: 60px 0;">
+      <div class="container section-container">
+        <h2 class="section-title">LOP &amp; COP Range</h2>
+        <p class="section-subtitle">Precision-engineered panels for every elevator application</p>
+        <div class="section-content products-grid stagger-entrance">
+
+          <div class="product-card">
+            <img src="FP1.jpeg" alt="Landing Operating Panel" loading="lazy" class="product-img" onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>Landing Operating Panel (LOP)</h3>
+              <p>Elegantly designed call buttons for each floor landing, with illuminated indicators for direction and arrival.</p>
+              <button class="slide-btn" style="align-self:flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="FP2.jpeg" alt="Car Operating Panel" loading="lazy" class="product-img" onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>Car Operating Panel (COP)</h3>
+              <p>In-cabin control panel with floor selection buttons, emergency controls, and door open/close functions.</p>
+              <button class="slide-btn" style="align-self:flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="FP3.jpeg" alt="LOP with Display" loading="lazy" class="product-img" onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>LOP with Floor Display</h3>
+              <p>Enhanced landing panel featuring a digital floor display to keep passengers informed of the elevator's current position.</p>
+              <button class="slide-btn" style="align-self:flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="FP1.jpeg" alt="COP with Touch Screen" loading="lazy" class="product-img" onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>COP with Touch Screen</h3>
+              <p>Modern touch-enabled car panel offering a premium user experience with smooth backlit controls.</p>
+              <button class="slide-btn" style="align-self:flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="FP2.jpeg" alt="LOP Single Button" loading="lazy" class="product-img" onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>LOP Single Button</h3>
+              <p>Compact single-button landing panel ideal for small freight and service elevators with limited floors.</p>
+              <button class="slide-btn" style="align-self:flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="FP3.jpeg" alt="COP with Emergency Phone" loading="lazy" class="product-img" onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>COP with Emergency Phone</h3>
+              <p>Safety-first car panel integrated with an emergency intercom for immediate passenger assistance.</p>
+              <button class="slide-btn" style="align-self:flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="FP1.jpeg" alt="Vandal Resistant LOP" loading="lazy" class="product-img" onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>Vandal Resistant LOP</h3>
+              <p>Rugged stainless steel landing panel built to withstand harsh environments and heavy public use.</p>
+              <button class="slide-btn" style="align-self:flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Jay Ambe Electricals. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">&#8679;</button>
+  <script src="script.js"></script>
+</body>
+</html>

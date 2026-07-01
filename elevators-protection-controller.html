@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elevators Protection Controllers - Jay Ambe Electricals</title>
+  <meta name="description" content="Explore Jay Ambe Electricals' range of Elevator Protection Controllers designed to safeguard your equipment from voltage fluctuations and electrical faults." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .product-hero {
+      background: var(--nav-bg);
+      padding: 110px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-size: 50px 50px;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      pointer-events: none;
+    }
+    .product-hero .breadcrumb {
+      position: relative;
+      z-index: 1;
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      opacity: 0;
+      animation: slideUpFade 0.7s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
+    }
+    .product-hero .breadcrumb a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .product-hero .breadcrumb a:hover { color: var(--nav-hover); }
+    .product-hero h1 {
+      position: relative;
+      z-index: 1;
+      font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+      font-size: clamp(28px, 6vw, 52px);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: slideUpFade 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s forwards;
+    }
+    .product-hero h1 span { color: var(--nav-hover); }
+    .product-hero p {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(14px, 2vw, 18px);
+      color: rgba(255,255,255,0.7);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.6;
+      opacity: 0;
+      animation: slideUpFade 0.8s cubic-bezier(0.16,1,0.3,1) 0.5s forwards;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar">
+      <div style="font-family:'Rajdhani',sans-serif;font-weight:700;color:white;font-size:24px;text-transform:uppercase;letter-spacing:2px;line-height:1;">
+        <a href="index.html" style="color:white;text-decoration:none;">Jay Ambe</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home" class="nav-item">Home</a></li>
+        <li><a href="index.html#about" class="nav-item">About</a></li>
+        <li><a href="index.html#infrastructure" class="nav-item">Infrastructure</a></li>
+        <li><a href="index.html#products" class="nav-item active">Products</a></li>
+        <li><a href="index.html#services" class="nav-item">Services</a></li>
+        <li><a href="index.html#gallery" class="nav-item">Gallery</a></li>
+        <li><a href="index.html#team" class="nav-item">Team</a></li>
+        <li><a href="index.html#contact" class="nav-item">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="product-hero">
+      <p class="breadcrumb">
+        <a href="index.html">Home</a> &rsaquo;
+        <a href="index.html#products">Our Products</a> &rsaquo;
+        Elevators Protection Controllers
+      </p>
+      <h1>Protection <span>Controllers</span></h1>
+      <p>Advanced protection controllers that safeguard your elevator circuitry against voltage fluctuations, phase reversals, and electrical faults — ensuring uninterrupted performance.</p>
+    </div>
+
+    <section class="page-section reveal" style="padding: 60px 0;">
+      <div class="container section-container">
+        <h2 class="section-title">Power Protection Units</h2>
+        <p class="section-subtitle">Reliable electrical safeguards for your elevator systems</p>
+        <div class="section-content products-grid stagger-entrance">
+
+          <div class="product-card">
+            <img src="FP1.jpeg" alt="Auto Cut Off Switch" loading="lazy" class="product-img" onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>Auto Cut Off Switch</h3>
+              <p>Precision-engineered switch that automatically disconnects power during electrical anomalies to protect core elevator components from damage.</p>
+              <button class="slide-btn" style="align-self:flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="FP2.jpeg" alt="Auto Phase Changer" loading="lazy" class="product-img" onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>Auto Phase Changer</h3>
+              <p>Intelligent phase correction unit that ensures continuous operation even during phase reversal or loss, preventing motor damage and downtime.</p>
+              <button class="slide-btn" style="align-self:flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="FP3.jpeg" alt="Stabilizer" loading="lazy" class="product-img" onerror="this.style.display='none'" />
+            <div class="product-info">
+              <h3>Stabilizer</h3>
+              <p>High-capacity voltage stabilizer designed to provide a constant, regulated power output — preventing damage from voltage spikes and brownouts.</p>
+              <button class="slide-btn" style="align-self:flex-start;">Enquire Now</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Jay Ambe Electricals. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">&#8679;</button>
+  <script src="script.js"></script>
+</body>
+</html>

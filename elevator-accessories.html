@@ -13,7 +13,25 @@
       background: var(--nav-bg);
       padding: 110px 24px 48px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
+
+    .product-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-size: 50px 50px;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .product-hero .breadcrumb,
+    .product-hero h1,
+    .product-hero p { position: relative; z-index: 1; }
 
     .product-hero .breadcrumb {
       font-size: 13px;
@@ -209,7 +227,9 @@
 
           <!-- Card 1 -->
           <div class="product-card">
-            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-img-placeholder">
+              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Regular maintenance box.jpeg" alt="Regular Maintenance Box" loading="lazy" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="product-info">
               <h3>Regular Maintenance Box</h3>
               <p>Standard maintenance box housing essential terminal connections and fusing for routine elevator service and inspection operations.</p>
@@ -219,7 +239,9 @@
 
           <!-- Card 2 -->
           <div class="product-card">
-            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-img-placeholder">
+              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Arcube maintanace box.jpeg" alt="Arcube Maintenance Box" loading="lazy" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="product-info">
               <h3>Arcube Maintenance Box</h3>
               <p>Arcube-type maintenance box designed for compact shaft installations, providing organised terminal access for servicing elevator circuits.</p>
@@ -229,37 +251,45 @@
 
           <!-- Card 3 -->
           <div class="product-card">
-            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-img-placeholder">
+              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Connector base maintanance box.jpeg" alt="Connector Base Maintenance Box" loading="lazy" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="product-info">
-              <h3>Adco Maintenance Box</h3>
-              <p>Adco-pattern maintenance box offering a rugged enclosure for critical control board and terminal strip installations in the elevator shaft.</p>
+              <h3>Connector Base Maintenance Box</h3>
+              <p>Connector base maintenance box offering a rugged enclosure for critical control board and terminal strip installations in the elevator shaft.</p>
               <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
             </div>
           </div>
 
           <!-- Card 4 -->
           <div class="product-card">
-            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-img-placeholder">
+              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Monarch serial maintanance box.jpeg" alt="Monarch Serial Maintenance Box" loading="lazy" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="product-info">
-              <h3>Limit Switch</h3>
-              <p>Mechanical limit switch for final travel position detection, providing reliable stopping signals at the top and bottom of the elevator shaft.</p>
+              <h3>Monarch Serial Maintenance Box</h3>
+              <p>Monarch-pattern serial maintenance box providing organised terminal access for complex multi-floor elevator wiring configurations.</p>
               <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
             </div>
           </div>
 
           <!-- Card 5 -->
           <div class="product-card">
-            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-img-placeholder">
+              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Same serial maintanance box.jpeg" alt="Same Serial Maintenance Box" loading="lazy" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="product-info">
-              <h3>Limit Switch (Fire Alarm Type)</h3>
-              <p>Fire alarm-integrated limit switch that triggers automatic elevator recall to the designated landing upon detection of a fire condition.</p>
+              <h3>Same Serial Maintenance Box</h3>
+              <p>Same-series serial maintenance box offering a reliable, uniform enclosure design compatible with standard elevator controller layouts.</p>
               <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
             </div>
           </div>
 
           <!-- Card 6 -->
           <div class="product-card">
-            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-img-placeholder">
+              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Pit Switch.jpeg" alt="Pit Switch" loading="lazy" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="product-info">
               <h3>Pit Switch</h3>
               <p>Emergency stop pit switch installed at the base of the shaft, allowing maintenance personnel to immediately halt elevator movement during pit inspection.</p>
@@ -269,7 +299,9 @@
 
           <!-- Card 7 -->
           <div class="product-card">
-            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-img-placeholder">
+              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Hooter.jpeg" alt="Hooter" loading="lazy" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="product-info">
               <h3>Hooter</h3>
               <p>Audible alarm hooter for elevator overload and emergency alert notifications, ensuring clear warning signals audible throughout the installation area.</p>
@@ -279,7 +311,9 @@
 
           <!-- Card 8 -->
           <div class="product-card">
-            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-img-placeholder">
+              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Reed Switch.jpeg" alt="Penciled Reed Switch" loading="lazy" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="product-info">
               <h3>Penciled Reed Switch</h3>
               <p>Compact pencil-type reed switch for precise floor zone and position detection, compatible with magnet-actuated positional sensing systems.</p>
@@ -289,7 +323,9 @@
 
           <!-- Card 9 -->
           <div class="product-card">
-            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-img-placeholder">
+              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Maintenance Box.jpeg" alt="Maintenance Box" loading="lazy" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="product-info">
               <h3>Maintenance Box</h3>
               <p>Cartop-mounted maintenance box providing inspection run controls, emergency stop, and power sockets required for safe on-car maintenance work.</p>
@@ -299,7 +335,9 @@
 
           <!-- Card 10 -->
           <div class="product-card">
-            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-img-placeholder">
+              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Limit Switch.jpeg" alt="Limit Switch" loading="lazy" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="product-info">
               <h3>Limit Switch</h3>
               <p>Robust rotary or lever-actuated limit switch for door open/close confirmation and travel end detection in elevator door operator systems.</p>
@@ -309,7 +347,9 @@
 
           <!-- Card 11 -->
           <div class="product-card">
-            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-img-placeholder">
+              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Blower.jpeg" alt="Blower" loading="lazy" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="product-info">
               <h3>Blower</h3>
               <p>High-efficiency centrifugal blower unit for VFD and control panel cooling, maintaining optimal operating temperature in the machine room.</p>
@@ -319,7 +359,9 @@
 
           <!-- Card 12 -->
           <div class="product-card">
-            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-img-placeholder">
+              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Speacket.jpeg" alt="Speacket" loading="lazy" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="product-info">
               <h3>Speacket</h3>
               <p>Integrated speaker and socket unit for car cabin audio announcements and maintenance power supply, housed in a compact, easy-fit enclosure.</p>
@@ -329,7 +371,9 @@
 
           <!-- Card 13 -->
           <div class="product-card">
-            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-img-placeholder">
+              <img class="product-img-in-placeholder" src="Images/Elevators accessories/LED Lights.jpeg" alt="LED Lights" loading="lazy" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="product-info">
               <h3>LED Lights</h3>
               <p>Energy-efficient LED lighting panels for elevator cab interiors and shaft illumination, offering long service life and low power consumption.</p>
@@ -339,7 +383,9 @@
 
           <!-- Card 14 -->
           <div class="product-card">
-            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-img-placeholder">
+              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Door Sensor.jpeg" alt="Door Sensor" loading="lazy" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="product-info">
               <h3>Door Sensor</h3>
               <p>Infrared or light-curtain door sensor detecting obstructions in the doorway and preventing door closure to ensure passenger safety.</p>
@@ -349,7 +395,9 @@
 
           <!-- Card 15 -->
           <div class="product-card">
-            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-img-placeholder">
+              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Elevator Fan.jpeg" alt="Elevator Fan" loading="lazy" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="product-info">
               <h3>Elevator Fan</h3>
               <p>Axial ventilation fan for continuous airflow within the elevator car, maintaining a comfortable cabin environment for passengers.</p>
@@ -359,7 +407,9 @@
 
           <!-- Card 16 -->
           <div class="product-card">
-            <div class="product-img-placeholder">[ Product Image ]</div>
+            <div class="product-img-placeholder">
+              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Elevator Backup Unit.jpeg" alt="Elevator Backup Unit" loading="lazy" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="product-info">
               <h3>Elevator Backup Unit</h3>
               <p>Battery-backed UPS unit providing emergency power to the elevator control system, enabling safe landing and door operation during power outages.</p>

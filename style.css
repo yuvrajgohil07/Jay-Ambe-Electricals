@@ -34,7 +34,11 @@ html {
 
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: var(--bg-main);
+  background-color: var(--bg-main);
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   color: var(--text-main);
   overflow-x: hidden;
   width: 100%;
@@ -848,7 +852,7 @@ position: relative;
 
 /* Satisfied Customers Marquee */
 .about-clients {
-  margin-bottom: 60px;
+  margin-bottom: 0;
   text-align: center;
 }
 
