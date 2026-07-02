@@ -19,6 +19,7 @@
       position: relative;
       overflow: hidden;
       text-align: center;
+      background: var(--nav-bg);
     }
 
     /* Animated radial glow blobs */
@@ -228,34 +229,6 @@
     }
     .cs-feature-pill .pill-icon { font-size: 16px; }
 
-    /* Notify button */
-    .cs-notify-btn {
-      position: relative;
-      z-index: 2;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #3b82f6, #1e40af);
-      color: white;
-      border: none;
-      padding: 14px 36px;
-      border-radius: 50px;
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      cursor: pointer;
-      opacity: 0;
-      animation: slideUpFade 0.8s cubic-bezier(0.16,1,0.3,1) 1.2s forwards;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 8px 25px rgba(59,130,246,0.35);
-    }
-    .cs-notify-btn:hover {
-      transform: translateY(-4px) scale(1.04);
-      box-shadow: 0 14px 35px rgba(59,130,246,0.5);
-    }
-    .cs-notify-btn:active { transform: scale(0.97); }
-
     /* Floating particles unique to this page */
     .cs-particles {
       position: absolute;
@@ -380,11 +353,6 @@
         <div class="cs-feature-pill"><span class="pill-icon">📊</span> Real-time Monitoring</div>
         <div class="cs-feature-pill"><span class="pill-icon">🌐</span> Smart Integration</div>
       </div>
-
-      <!-- CTA button -->
-      <button class="cs-notify-btn" onclick="window.location.href='index.html#contact'">
-        ✉️ &nbsp;Get Notified When Ready
-      </button>
 
       <a href="index.html#products" class="cs-back-link">&larr; Back to All Products</a>
 

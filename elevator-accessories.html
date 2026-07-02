@@ -5,18 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Elevator Electrical Accessories – Jay Ambe Electricals</title>
-  <meta name="description" content="Explore Jay Ambe Electricals' complete range of Elevator Electrical Accessories including maintenance boxes, switches, lighting, sensors and more." />
+  <meta name="description" content="Explore Jay Ambe Electricals' complete range of Elevator Electrical Accessories including maintenance boxes, switches, sensors, cable accessories and more." />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ===== PAGE-SPECIFIC STYLES ===== */
     .product-hero {
       background: var(--nav-bg);
-      padding: 110px 24px 48px;
+      padding: 110px 24px 60px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
-
     .product-hero::before {
       content: '';
       position: absolute;
@@ -26,31 +24,26 @@
         linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
       pointer-events: none;
-      z-index: 0;
     }
-
-    .product-hero .breadcrumb,
-    .product-hero h1,
-    .product-hero p { position: relative; z-index: 1; }
-
     .product-hero .breadcrumb {
+      position: relative;
+      z-index: 1;
       font-size: 13px;
       color: rgba(255,255,255,0.55);
       margin-bottom: 12px;
       letter-spacing: 0.5px;
+      opacity: 0;
+      animation: slideUpFade 0.7s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
     }
-
     .product-hero .breadcrumb a {
       color: rgba(255,255,255,0.55);
       text-decoration: none;
       transition: color 0.2s;
     }
-
-    .product-hero .breadcrumb a:hover {
-      color: var(--nav-hover);
-    }
-
+    .product-hero .breadcrumb a:hover { color: var(--nav-hover); }
     .product-hero h1 {
+      position: relative;
+      z-index: 1;
       font-family: 'Rajdhani', 'Segoe UI', sans-serif;
       font-size: clamp(28px, 6vw, 52px);
       font-weight: 700;
@@ -58,138 +51,29 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 10px;
+      opacity: 0;
+      animation: slideUpFade 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s forwards;
     }
-
-    .product-hero h1 span {
-      color: var(--nav-hover);
-    }
-
+    .product-hero h1 span { color: var(--nav-hover); }
     .product-hero p {
+      position: relative;
+      z-index: 1;
       font-size: clamp(14px, 2vw, 18px);
       color: rgba(255,255,255,0.7);
-      max-width: 640px;
+      max-width: 680px;
       margin: 0 auto;
       line-height: 1.6;
-    }
-
-    /* Single accessories section */
-    .acc-section {
-      padding: 60px 24px;
-      background: var(--bg-main);
-    }
-
-    .acc-inner {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .acc-heading {
-      font-family: 'Rajdhani', 'Segoe UI', sans-serif;
-      font-size: clamp(24px, 4vw, 36px);
-      font-weight: 700;
-      color: var(--nav-bg);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-      position: relative;
-      display: inline-block;
-    }
-
-    .acc-heading::after {
-      content: '';
-      display: block;
-      width: 50px;
-      height: 4px;
-      background: var(--nav-hover);
-      border-radius: 2px;
-      margin-top: 8px;
-    }
-
-    .acc-subtitle {
-      font-size: clamp(13px, 1.8vw, 16px);
-      color: #666;
-      margin-bottom: 36px;
-      margin-top: 8px;
-    }
-
-    /* 3-per-row grid — identical to index.html products grid */
-    .acc-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-    }
-
-    @media (min-width: 768px) {
-      .acc-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    /* Cards — identical to index.html product-card */
-    .acc-grid .product-card {
-      background: var(--white);
-      border-radius: 8px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-      transition: transform 0.3s, box-shadow 0.3s;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      padding: 0;
-    }
-
-    .acc-grid .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    }
-
-    /* Image placeholder */
-    .acc-grid .product-img-placeholder {
-      width: 100%;
-      height: 220px;
-      background: #d4d4d4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #888;
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.3px;
-    }
-
-    .acc-grid .product-info {
-      padding: 24px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .acc-grid .product-info h3 {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 20px;
-      color: var(--nav-bg);
-      margin-bottom: 10px;
-    }
-
-    .acc-grid .product-info p {
-      color: #555;
-      font-size: 15px;
-      line-height: 1.5;
-      margin-bottom: 20px;
-      flex-grow: 1;
+      opacity: 0;
+      animation: slideUpFade 0.8s cubic-bezier(0.16,1,0.3,1) 0.5s forwards;
     }
   </style>
 </head>
 
 <body>
-
-  <!-- ===== HEADER / NAVIGATION (Fixed Top) ===== -->
   <header class="site-header" id="siteHeader">
     <nav class="navbar">
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html#home" class="nav-item">Home</a></li>
@@ -205,9 +89,14 @@
   </header>
 
   <main>
-
-    <!-- ===== PRODUCT HERO BANNER ===== -->
-    <div class="product-hero">
+    <div class="product-hero animated-product-hero">
+      <div class="product-hero-particles" aria-hidden="true">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
       <p class="breadcrumb">
         <a href="index.html">Home</a> &rsaquo;
         <a href="index.html#products">Our Products</a> &rsaquo;
@@ -215,276 +104,150 @@
       </p>
       <h1>Elevator <span>Electrical Accessories</span></h1>
       <p>A comprehensive range of essential electrical accessories designed to optimise elevator performance, safety, and reliability across all installation types.</p>
+      <div class="hero-kicker-pill">Complete Accessories Range</div>
     </div>
 
-    <!-- ===== ACCESSORIES GRID ===== -->
-    <section class="acc-section reveal">
-      <div class="acc-inner">
-        <h2 class="acc-heading">Elevator Accessories</h2>
-        <p class="acc-subtitle">Quality components for every elevator requirement</p>
+    <section class="product-page-section reveal">
+      <div class="product-page-inner">
+        <h2 class="product-page-heading">Maintenance Boxes</h2>
+        <p class="product-page-subtitle">Robust enclosures for terminal access, inspection controls and servicing elevator circuits.</p>
+        <div class="product-page-grid">
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/Regular maintenance box.jpeg" alt="Regular Maintenance Box" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Regular Maintenance Box</h3><p>Standard maintenance box housing essential terminal connections and fusing for routine elevator service and inspection operations.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
 
-        <div class="acc-grid">
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/Arcube maintanace box.jpeg" alt="Arcube Maintenance Box" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Arcube Maintenance Box</h3><p>Arcube-type maintenance box designed for compact shaft installations, providing organised terminal access for servicing elevator circuits.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
 
-          <!-- Card 1 -->
-          <div class="product-card">
-            <div class="product-img-placeholder">
-              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Regular maintenance box.jpeg" alt="Regular Maintenance Box" loading="lazy" onerror="this.parentElement.style.display='none'" />
-            </div>
-            <div class="product-info">
-              <h3>Regular Maintenance Box</h3>
-              <p>Standard maintenance box housing essential terminal connections and fusing for routine elevator service and inspection operations.</p>
-              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
-            </div>
-          </div>
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/Connector base maintanance box.jpeg" alt="Connector Base Maintenance Box" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Connector Base Maintenance Box</h3><p>Connector base maintenance box offering a rugged enclosure for critical control board and terminal strip installations.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
 
-          <!-- Card 2 -->
-          <div class="product-card">
-            <div class="product-img-placeholder">
-              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Arcube maintanace box.jpeg" alt="Arcube Maintenance Box" loading="lazy" onerror="this.parentElement.style.display='none'" />
-            </div>
-            <div class="product-info">
-              <h3>Arcube Maintenance Box</h3>
-              <p>Arcube-type maintenance box designed for compact shaft installations, providing organised terminal access for servicing elevator circuits.</p>
-              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
-            </div>
-          </div>
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/Monarch serial maintanance box.jpeg" alt="Monarch Serial Maintenance Box" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Monarch Serial Maintenance Box</h3><p>Monarch-pattern serial maintenance box providing organised terminal access for complex multi-floor elevator wiring configurations.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
 
-          <!-- Card 3 -->
-          <div class="product-card">
-            <div class="product-img-placeholder">
-              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Connector base maintanance box.jpeg" alt="Connector Base Maintenance Box" loading="lazy" onerror="this.parentElement.style.display='none'" />
-            </div>
-            <div class="product-info">
-              <h3>Connector Base Maintenance Box</h3>
-              <p>Connector base maintenance box offering a rugged enclosure for critical control board and terminal strip installations in the elevator shaft.</p>
-              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
-            </div>
-          </div>
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/Same serial maintanance box.jpeg" alt="Same Serial Maintenance Box" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Same Serial Maintenance Box</h3><p>Same-series serial maintenance box offering a reliable, uniform enclosure design compatible with standard elevator controller layouts.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
 
-          <!-- Card 4 -->
-          <div class="product-card">
-            <div class="product-img-placeholder">
-              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Monarch serial maintanance box.jpeg" alt="Monarch Serial Maintenance Box" loading="lazy" onerror="this.parentElement.style.display='none'" />
-            </div>
-            <div class="product-info">
-              <h3>Monarch Serial Maintenance Box</h3>
-              <p>Monarch-pattern serial maintenance box providing organised terminal access for complex multi-floor elevator wiring configurations.</p>
-              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
-            </div>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="product-card">
-            <div class="product-img-placeholder">
-              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Same serial maintanance box.jpeg" alt="Same Serial Maintenance Box" loading="lazy" onerror="this.parentElement.style.display='none'" />
-            </div>
-            <div class="product-info">
-              <h3>Same Serial Maintenance Box</h3>
-              <p>Same-series serial maintenance box offering a reliable, uniform enclosure design compatible with standard elevator controller layouts.</p>
-              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="product-card">
-            <div class="product-img-placeholder">
-              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Pit Switch.jpeg" alt="Pit Switch" loading="lazy" onerror="this.parentElement.style.display='none'" />
-            </div>
-            <div class="product-info">
-              <h3>Pit Switch</h3>
-              <p>Emergency stop pit switch installed at the base of the shaft, allowing maintenance personnel to immediately halt elevator movement during pit inspection.</p>
-              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
-            </div>
-          </div>
-
-          <!-- Card 7 -->
-          <div class="product-card">
-            <div class="product-img-placeholder">
-              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Hooter.jpeg" alt="Hooter" loading="lazy" onerror="this.parentElement.style.display='none'" />
-            </div>
-            <div class="product-info">
-              <h3>Hooter</h3>
-              <p>Audible alarm hooter for elevator overload and emergency alert notifications, ensuring clear warning signals audible throughout the installation area.</p>
-              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
-            </div>
-          </div>
-
-          <!-- Card 8 -->
-          <div class="product-card">
-            <div class="product-img-placeholder">
-              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Reed Switch.jpeg" alt="Penciled Reed Switch" loading="lazy" onerror="this.parentElement.style.display='none'" />
-            </div>
-            <div class="product-info">
-              <h3>Penciled Reed Switch</h3>
-              <p>Compact pencil-type reed switch for precise floor zone and position detection, compatible with magnet-actuated positional sensing systems.</p>
-              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
-            </div>
-          </div>
-
-          <!-- Card 9 -->
-          <div class="product-card">
-            <div class="product-img-placeholder">
-              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Maintenance Box.jpeg" alt="Maintenance Box" loading="lazy" onerror="this.parentElement.style.display='none'" />
-            </div>
-            <div class="product-info">
-              <h3>Maintenance Box</h3>
-              <p>Cartop-mounted maintenance box providing inspection run controls, emergency stop, and power sockets required for safe on-car maintenance work.</p>
-              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
-            </div>
-          </div>
-
-          <!-- Card 10 -->
-          <div class="product-card">
-            <div class="product-img-placeholder">
-              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Limit Switch.jpeg" alt="Limit Switch" loading="lazy" onerror="this.parentElement.style.display='none'" />
-            </div>
-            <div class="product-info">
-              <h3>Limit Switch</h3>
-              <p>Robust rotary or lever-actuated limit switch for door open/close confirmation and travel end detection in elevator door operator systems.</p>
-              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
-            </div>
-          </div>
-
-          <!-- Card 11 -->
-          <div class="product-card">
-            <div class="product-img-placeholder">
-              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Blower.jpeg" alt="Blower" loading="lazy" onerror="this.parentElement.style.display='none'" />
-            </div>
-            <div class="product-info">
-              <h3>Blower</h3>
-              <p>High-efficiency centrifugal blower unit for VFD and control panel cooling, maintaining optimal operating temperature in the machine room.</p>
-              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
-            </div>
-          </div>
-
-          <!-- Card 12 -->
-          <div class="product-card">
-            <div class="product-img-placeholder">
-              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Speacket.jpeg" alt="Speacket" loading="lazy" onerror="this.parentElement.style.display='none'" />
-            </div>
-            <div class="product-info">
-              <h3>Speacket</h3>
-              <p>Integrated speaker and socket unit for car cabin audio announcements and maintenance power supply, housed in a compact, easy-fit enclosure.</p>
-              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
-            </div>
-          </div>
-
-          <!-- Card 13 -->
-          <div class="product-card">
-            <div class="product-img-placeholder">
-              <img class="product-img-in-placeholder" src="Images/Elevators accessories/LED Lights.jpeg" alt="LED Lights" loading="lazy" onerror="this.parentElement.style.display='none'" />
-            </div>
-            <div class="product-info">
-              <h3>LED Lights</h3>
-              <p>Energy-efficient LED lighting panels for elevator cab interiors and shaft illumination, offering long service life and low power consumption.</p>
-              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
-            </div>
-          </div>
-
-          <!-- Card 14 -->
-          <div class="product-card">
-            <div class="product-img-placeholder">
-              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Door Sensor.jpeg" alt="Door Sensor" loading="lazy" onerror="this.parentElement.style.display='none'" />
-            </div>
-            <div class="product-info">
-              <h3>Door Sensor</h3>
-              <p>Infrared or light-curtain door sensor detecting obstructions in the doorway and preventing door closure to ensure passenger safety.</p>
-              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
-            </div>
-          </div>
-
-          <!-- Card 15 -->
-          <div class="product-card">
-            <div class="product-img-placeholder">
-              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Elevator Fan.jpeg" alt="Elevator Fan" loading="lazy" onerror="this.parentElement.style.display='none'" />
-            </div>
-            <div class="product-info">
-              <h3>Elevator Fan</h3>
-              <p>Axial ventilation fan for continuous airflow within the elevator car, maintaining a comfortable cabin environment for passengers.</p>
-              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
-            </div>
-          </div>
-
-          <!-- Card 16 -->
-          <div class="product-card">
-            <div class="product-img-placeholder">
-              <img class="product-img-in-placeholder" src="Images/Elevators accessories/Elevator Backup Unit.jpeg" alt="Elevator Backup Unit" loading="lazy" onerror="this.parentElement.style.display='none'" />
-            </div>
-            <div class="product-info">
-              <h3>Elevator Backup Unit</h3>
-              <p>Battery-backed UPS unit providing emergency power to the elevator control system, enabling safe landing and door operation during power outages.</p>
-              <button class="slide-btn" style="align-self: flex-start;">Enquire Now</button>
-            </div>
-          </div>
-
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/Maintanance box.jpeg" alt="Maintenance Box" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Maintenance Box</h3><p>Cartop-mounted maintenance box providing inspection run controls, emergency stop, and power sockets required for safe on-car maintenance work.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
         </div>
       </div>
     </section>
 
+    <section class="product-page-section reveal">
+      <div class="product-page-inner">
+        <h2 class="product-page-heading">Switches & Safety Devices</h2>
+        <p class="product-page-subtitle">Essential switches and safety components for elevator protection and compliance.</p>
+        <div class="product-page-grid">
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/PIT SWITCH.jpeg" alt="Pit Switch" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Pit Switch</h3><p>Emergency stop pit switch installed at the base of the shaft, allowing maintenance personnel to immediately halt elevator movement during pit inspection.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/FIRE SWITCH.jpeg" alt="Fire Switch" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Fire Switch</h3><p>Emergency fire switch for activating fire-mode elevator operation, ensuring safe descent to a designated floor during fire emergencies.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/SAFETY SWITCH.jpeg" alt="Safety Switch" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Safety Switch</h3><p>Multi-purpose safety switch ensuring circuit isolation and protection during maintenance and emergency conditions.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/Cargate switch.jpeg" alt="Cargate Switch" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Cargate Switch</h3><p>Car gate switch assembly for door safety feedback and interlock circuits, ensuring the elevator cannot move with open doors.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/LIMIT SWITCH EXTENTION.jpeg" alt="Limit Switch Extension" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Limit Switch Extension</h3><p>Robust lever-actuated limit switch extension for travel end detection and door operator systems in elevator installations.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/REED SWITCH.jpeg" alt="Reed Switch" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Reed Switch</h3><p>Compact pencil-type reed switch for precise floor zone and position detection, compatible with magnet-actuated positional sensing systems.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-page-section reveal">
+      <div class="product-page-inner">
+        <h2 class="product-page-heading">Cable Accessories & Angles</h2>
+        <p class="product-page-subtitle">Cable management and routing accessories for neat, professional installations.</p>
+        <div class="product-page-grid">
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/FLAT CABLE ANGLE.jpeg" alt="Flat Cable Angle" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Flat Cable Angle</h3><p>Flat cable angle bracket for secure and organised routing of flat travelling cables along the elevator shaft.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/MS CABLE ANGLE.jpeg" alt="MS Cable Angle" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>MS Cable Angle</h3><p>Mild steel cable angle providing robust support and secure cable routing for heavy-duty elevator wiring installations.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/Pvc cable angle.jpeg" alt="PVC Cable Angle" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>PVC Cable Angle</h3><p>Lightweight PVC cable angle for clean, insulated cable routing in elevator shafts and machine rooms.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/Cable tie (100mm, 150mm & 200mm).jpeg" alt="Cable Ties" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Cable Ties (100mm, 150mm & 200mm)</h3><p>Industrial-grade cable ties available in multiple sizes for bundling and securing wiring harnesses throughout the elevator system.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/Insulation tape.jpeg" alt="Insulation Tape" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Insulation Tape</h3><p>High-quality electrical insulation tape for safe wire termination, joint protection and insulation in elevator wiring.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/Sedal (16mm & 20mm).jpeg" alt="Sedal" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Sedal (16mm & 20mm)</h3><p>Conduit sedals in 16mm and 20mm sizes for secure cable protection and routing through elevator panels and enclosures.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-page-section reveal">
+      <div class="product-page-inner">
+        <h2 class="product-page-heading">Audio, Alarm & Electrical Components</h2>
+        <p class="product-page-subtitle">Communication, alarm and essential electrical components for complete elevator systems.</p>
+        <div class="product-page-grid">
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/ALARM.jpeg" alt="Alarm" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Alarm</h3><p>High-decibel emergency alarm for elevator overload and emergency alert notifications, ensuring clear warning signals.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/Hooter.jpeg" alt="Hooter" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Hooter</h3><p>Audible alarm hooter for elevator overload and emergency alert notifications, ensuring clear warning signals audible throughout the installation area.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/Speaker.jpeg" alt="Speaker" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Speaker</h3><p>Integrated speaker unit for car cabin audio announcements and emergency communication systems.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/Blower.jpeg" alt="Blower" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Blower</h3><p>High-efficiency centrifugal blower unit for VFD and control panel cooling, maintaining optimal operating temperature in the machine room.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/EARTHING BAR.jpeg" alt="Earthing Bar" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Earthing Bar</h3><p>Heavy-duty earthing bar for safe and compliant grounding connections across elevator electrical installations.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/Ram stricker unit.jpeg" alt="Ram Striker Unit" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Ram Striker Unit</h3><p>Ram striker unit for door locking and landing engagement control, ensuring precise mechanical actuation.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Elevators accessories/Roap study clamp.jpeg" alt="Rope Study Clamp" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Rope Study Clamp</h3><p>Robust rope study clamp for secure wire rope termination and tension adjustment in elevator hoist systems.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2026 Jay Ambe Electricals. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <!-- ===== SCROLL TO TOP BUTTON ===== -->
   <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">&#8679;</button>
-
-  <script>
-    /* Navigation */
-    (function () {
-      const hamburger = document.getElementById('hamburger');
-      const navLinks  = document.getElementById('navLinks');
-      if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
-          const isOpen = navLinks.classList.toggle('open');
-          hamburger.classList.toggle('open', isOpen);
-          hamburger.setAttribute('aria-expanded', isOpen);
-        });
-      }
-      const navItems = navLinks ? navLinks.querySelectorAll('.nav-item') : [];
-      navItems.forEach(item => {
-        item.addEventListener('click', () => {
-          if (navLinks && hamburger) {
-            navLinks.classList.remove('open');
-            hamburger.classList.remove('open');
-            hamburger.setAttribute('aria-expanded', 'false');
-          }
-        });
-      });
-    })();
-
-    /* Reveal animations */
-    (function () {
-      const reveals = document.querySelectorAll('.reveal');
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('active');
-          });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-        reveals.forEach(el => observer.observe(el));
-      } else {
-        reveals.forEach(el => el.classList.add('active'));
-      }
-    })();
-
-    /* Scroll to top */
-    (function () {
-      const btn = document.getElementById('scrollToTop');
-      if (!btn) return;
-      window.addEventListener('scroll', () => {
-        btn.classList.toggle('show', window.pageYOffset > 400);
-      });
-      btn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    })();
-  </script>
-
+  <script src="script.js"></script>
 </body>
 
 </html>

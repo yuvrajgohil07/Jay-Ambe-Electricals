@@ -72,9 +72,6 @@
 <body>
   <header class="site-header" id="siteHeader">
     <nav class="navbar">
-      <div style="font-family:'Rajdhani',sans-serif;font-weight:700;color:white;font-size:24px;text-transform:uppercase;letter-spacing:2px;line-height:1;">
-        <a href="index.html" style="color:white;text-decoration:none;">Jay Ambe</a>
-      </div>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -92,7 +89,14 @@
   </header>
 
   <main>
-    <div class="product-hero">
+    <div class="product-hero animated-product-hero">
+      <div class="product-hero-particles" aria-hidden="true">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
       <p class="breadcrumb">
         <a href="index.html">Home</a> &rsaquo;
         <a href="index.html#products">Our Products</a> &rsaquo;
@@ -100,41 +104,25 @@
       </p>
       <h1>Protection <span>Controllers</span></h1>
       <p>Advanced protection controllers that safeguard your elevator circuitry against voltage fluctuations, phase reversals, and electrical faults — ensuring uninterrupted performance.</p>
+      <div class="hero-kicker-pill">Power Protection Units</div>
     </div>
 
-    <section class="page-section reveal" style="padding: 60px 0;">
-      <div class="container section-container">
-        <h2 class="section-title">Power Protection Units</h2>
-        <p class="section-subtitle">Reliable electrical safeguards for your elevator systems</p>
-        <div class="section-content products-grid stagger-entrance">
+    <section class="product-page-section reveal">
+      <div class="product-page-inner">
+        <h2 class="product-page-heading">Power Protection Units</h2>
+        <p class="product-page-subtitle">Reliable electrical safeguards for your elevator systems</p>
+        <div class="product-page-grid">
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Protection Controllers/Auto Cut Off Switch.png" alt="Auto Cut Off Switch" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Auto Cut Off Switch</h3><p>Precision-engineered switch that automatically disconnects power during electrical anomalies to protect core elevator components from damage.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
 
-          <div class="product-card">
-            <img src="FP1.jpeg" alt="Auto Cut Off Switch" loading="lazy" class="product-img" onerror="this.style.display='none'" />
-            <div class="product-info">
-              <h3>Auto Cut Off Switch</h3>
-              <p>Precision-engineered switch that automatically disconnects power during electrical anomalies to protect core elevator components from damage.</p>
-              <button class="slide-btn" style="align-self:flex-start;">Enquire Now</button>
-            </div>
-          </div>
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Protection Controllers/Auto Phase Changer.jpeg" alt="Auto Phase Changer" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Auto Phase Changer</h3><p>Intelligent phase correction unit that ensures continuous operation even during phase reversal or loss, preventing motor damage and downtime.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
 
-          <div class="product-card">
-            <img src="FP2.jpeg" alt="Auto Phase Changer" loading="lazy" class="product-img" onerror="this.style.display='none'" />
-            <div class="product-info">
-              <h3>Auto Phase Changer</h3>
-              <p>Intelligent phase correction unit that ensures continuous operation even during phase reversal or loss, preventing motor damage and downtime.</p>
-              <button class="slide-btn" style="align-self:flex-start;">Enquire Now</button>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <img src="FP3.jpeg" alt="Stabilizer" loading="lazy" class="product-img" onerror="this.style.display='none'" />
-            <div class="product-info">
-              <h3>Stabilizer</h3>
-              <p>High-capacity voltage stabilizer designed to provide a constant, regulated power output — preventing damage from voltage spikes and brownouts.</p>
-              <button class="slide-btn" style="align-self:flex-start;">Enquire Now</button>
-            </div>
-          </div>
-
+          <div class="product-card"><div class="product-img-placeholder">
+            <img class="product-img-in-placeholder" src="Images/Protection Controllers/Stabilizer.png" alt="Stabilizer" loading="lazy" onerror="this.style.display='none'" />
+          </div><div class="product-info"><h3>Stabilizer</h3><p>High-capacity voltage stabilizer designed to provide a constant, regulated power output — preventing damage from voltage spikes and brownouts.</p><button class="slide-btn" style="align-self: flex-start;">Enquire Now</button></div></div>
         </div>
       </div>
     </section>
