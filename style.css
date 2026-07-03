@@ -30,6 +30,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -856,6 +857,8 @@ position: relative;
 .about-clients {
   margin-bottom: 0;
   text-align: center;
+  width: 100%;
+  max-width: 100%;
 }
 
 .about-clients h3, .about-testimonials h3 {
